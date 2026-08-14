@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Portada · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Guía completa en español para aprender CorelDraw de cero a experto: 11 módulos, ejercicios y plan de estudio.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="assets/css/responsive.css?v=4">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <a class="h-link active" href="index.html">Inicio</a>
+      <a class="h-link" href="pages/modulos.html">Módulos</a>
+      <a class="h-link" href="pages/recursos.html">Recursos</a>
+      <a class="h-link" href="pages/glosario.html">Glosario</a>
+      <a class="h-link" href="pages/comandos.html">Comandos</a>
+      <a class="h-link" href="pages/herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+
+  <!-- HERO -->
+  <section class="hero hero-home">
+    <div class="container-narrow">
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-lg-6">
+          <span class="eyebrow js-anim-eyebrow"><i class="bi bi-vector-pen"></i> Guía completa en español</span>
+          <h1 class="js-anim-title">De cero a <em>experto</em> en CorelDraw</h1>
+          <p class="lead js-anim-lead">
+            Una ruta de aprendizaje estructurada en 11 módulos: desde instalar el programa y entender
+            el lienzo, hasta dominar curvas Bézier, efectos avanzados, exportación para imprenta y un
+            plan de estudio con proyectos reales para construir tu portafolio.
+          </p>
+          <div class="hero-chips js-anim-lead">
+            <span class="hero-chip"><i class="bi bi-bezier2"></i> Logotipos</span>
+            <span class="hero-chip"><i class="bi bi-signpost-split"></i> Rotulación</span>
+            <span class="hero-chip"><i class="bi bi-newspaper"></i> Editorial</span>
+            <span class="hero-chip"><i class="bi bi-easel"></i> Ilustración</span>
+            <span class="hero-chip"><i class="bi bi-box-seam"></i> Packaging</span>
+          </div>
+          <div class="hero-ctas mt-4">
+            <a href="pages/lecciones/01-introduccion-y-entorno.html" class="btn-vec btn-vec-primary btn-shimmer js-anim-cta">
+              <i class="bi bi-play-fill"></i> Empezar la Lección 1
+            </a>
+            <a href="pages/modulos.html" class="btn-vec btn-vec-ghost js-anim-cta">
+              <i class="bi bi-layers"></i> Ver los módulos
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat js-anim-stat"><b data-count="11">11</b><span>Módulos</span></div>
+            <div class="hero-stat js-anim-stat"><b data-count="8">8</b><span>Semanas sugeridas</span></div>
+            <div class="hero-stat js-anim-stat"><b data-count="4">4</b><span>Proyectos guiados</span></div>
+            <div class="hero-stat js-anim-stat"><b>360px+</b><span>100% responsiva</span></div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="hero-canvas-wrap js-anim-frame" data-tilt="4">
+            <canvas id="hero-3d-canvas"></canvas>
+            <span class="hero-canvas-tag"><span class="live-dot"></span> Vista previa 3D · efecto Extrusión (Babylon.js)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint"><i class="bi bi-chevron-down"></i> Desliza</div>
+  </section>
+
+  <!-- CINTA DE TEMAS -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item"><i class="bi bi-bezier2"></i> Logotipos</span>
+      <span class="marquee-item"><i class="bi bi-signpost-split"></i> Rotulación</span>
+      <span class="marquee-item"><i class="bi bi-newspaper"></i> Editorial</span>
+      <span class="marquee-item"><i class="bi bi-easel"></i> Ilustración</span>
+      <span class="marquee-item"><i class="bi bi-box-seam"></i> Packaging</span>
+      <span class="marquee-item"><i class="bi bi-bounding-box-circles"></i> Curvas Bézier</span>
+      <span class="marquee-item"><i class="bi bi-palette2"></i> Color CMYK</span>
+      <span class="marquee-item"><i class="bi bi-printer"></i> Prepress</span>
+      <span class="marquee-item"><i class="bi bi-mortarboard"></i> Certificación CCA</span>
+    </div>
+  </div>
+
+  <!-- EXPLORA LA GUÍA -->
+  <section id="explora">
+    <div class="container-narrow">
+      <div class="section-head reveal">
+        <span class="kicker">Mapa del sitio</span>
+        <h2>Explora la guía</h2>
+        <p>Toda la guía está organizada en páginas independientes, enlazadas desde aquí: los módulos de la ruta, la teoría y las secciones de referencia rápida.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/modulos.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-layers"></i></div>
+              <h3>Módulos</h3>
+              <p>Los 11 módulos de la ruta con su nivel y duración.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/como-usar.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-compass"></i></div>
+              <h3>Cómo usar esta guía</h3>
+              <p>Tres pasos simples para aprovechar todas las lecciones.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/que-es.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-vector-pen"></i></div>
+              <h3>¿Qué es CorelDraw?</h3>
+              <p>Conceptos base y los usos profesionales del editor.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/metodo.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-diagram-3"></i></div>
+              <h3>Nuestro método</h3>
+              <p>Cómo aprendes, en qué orden y los niveles de la guía.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/recursos.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-collection"></i></div>
+              <h3>Recursos</h3>
+              <p>Webs, plantillas y enlaces de apoyo para practicar.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/glosario.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-book"></i></div>
+              <h3>Glosario</h3>
+              <p>Términos clave del diseño vectorial y CorelDraw.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/comandos.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-keyboard"></i></div>
+              <h3>Comandos</h3>
+              <p>Atajos de teclado y comandos esenciales de la guía.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <a href="pages/herramientas.html" class="text-decoration-none" data-tilt="5">
+            <div class="card-vec">
+              <div class="card-icon"><i class="bi bi-tools"></i></div>
+              <h3>Herramientas</h3>
+              <p>Catálogo de herramientas de la caja de herramientas.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="empezar">
+    <div class="container-narrow">
+      <div class="exercise reveal d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          <h4><i class="bi bi-rocket-takeoff"></i> ¿Listo para trazar tu primera curva?</h4>
+          <p class="text-dim mb-0">La Lección 1 te lleva de instalar CorelDraw a sentirte cómodo en el escritorio de trabajo.</p>
+        </div>
+        <a href="pages/lecciones/01-introduccion-y-entorno.html" class="btn-vec btn-vec-primary"><i class="bi bi-arrow-right-circle"></i> Ir a la Lección 1</a>
+      </div>
+    </div>
+  </section>
+
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/earcut.min.js"></script>
+<script src="assets/js/three-bg.js"></script><script src="assets/js/babylon-hero.js"></script>
+<script src="assets/js/site.js?v=4"></script>
+<script src="assets/js/motion.js?v=4"></script>
+</body>
+</html>

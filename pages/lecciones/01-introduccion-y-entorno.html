@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>01 · Introducción y entorno de trabajo · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Qué es CorelDraw, instalación y el escritorio de trabajo — Guía CorelDraw de Cero a Experto.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../../assets/css/style.css?v=4">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=4">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
+      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
+      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
+      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
+      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-compass"></i> Lección 01 · Básico</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Introducción y entorno de trabajo</h1>
+      <p class="lead js-anim-lead">Instala CorelDraw, reconoce cada rincón de la interfaz y configura tu primer documento correctamente antes de dibujar una sola línea.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+
+      <div class="section-head reveal">
+        <span class="kicker">1.1</span>
+        <h2>Instalación y primeros pasos</h2>
+        <p>CorelDraw está disponible como suscripción (CorelDRAW Graphics Suite) para Windows y macOS. Antes de instalar, verifica los requisitos mínimos de tu equipo.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-windows"></i></div>
+            <h3>Windows</h3>
+            <p>Windows 10/11 de 64 bits, 8 GB de RAM (16 GB recomendado), 5.5 GB de espacio en disco y una pantalla de al menos 1280×720.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-apple"></i></div>
+            <h3>macOS</h3>
+            <p>macOS reciente compatible con la versión instalada, 8 GB de RAM y espacio en disco similar. La interfaz y atajos varían: Cmd sustituye a Ctrl.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Si solo quieres practicar sin comprar la licencia, Corel ofrece una prueba gratuita de 15 días con
+        todas las funciones activas: suficiente para completar las primeras seis lecciones de esta guía.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">1.2</span>
+        <h2>El mapa de la interfaz</h2>
+        <p>Al abrir CorelDraw verás siempre las mismas seis zonas. Aprenderlas de memoria acelera todo lo demás.</p>
+      </div>
+
+      <div class="accordion accordion-vec reveal" id="acc01">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1"><i class="bi bi-menu-button-wide me-2"></i>&nbsp;Barra de menús y de propiedades</button></h3>
+          <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#acc01">
+            <div class="accordion-body">La barra de menús (Archivo, Editar, Ver, Diseño…) da acceso a todo el programa. Justo debajo, la <strong>barra de propiedades</strong> es contextual: cambia según la herramienta u objeto seleccionado, mostrando siempre las opciones más relevantes en ese momento.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2"><i class="bi bi-toolbar me-2"></i>&nbsp;Caja de herramientas</button></h3>
+          <div id="a2" class="accordion-collapse collapse" data-bs-parent="#acc01">
+            <div class="accordion-body">La franja vertical izquierda agrupa las herramientas de dibujo por familias (selección, forma, curvas, relleno...). Los pequeños triángulos en la esquina de un icono indican herramientas ocultas relacionadas: haz clic sostenido para desplegarlas.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3"><i class="bi bi-app me-2"></i>&nbsp;Área de dibujo y página</button></h3>
+          <div id="a3" class="accordion-collapse collapse" data-bs-parent="#acc01">
+            <div class="accordion-body">El rectángulo blanco central es tu "hoja de papel"; todo lo que quede dentro se imprime o exporta. Puedes trabajar también fuera de la página (el "escritorio"), útil para bocetar elementos antes de ubicarlos.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4"><i class="bi bi-palette me-2"></i>&nbsp;Paleta de colores</button></h3>
+          <div id="a4" class="accordion-collapse collapse" data-bs-parent="#acc01">
+            <div class="accordion-body">La franja vertical derecha. Clic izquierdo aplica relleno, clic derecho aplica contorno. Puedes cambiar la paleta activa (CMYK, RGB, Pantone) desde Ventana → Paletas de colores.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5"><i class="bi bi-layout-sidebar-reverse me-2"></i>&nbsp;Cuadros acoplables</button></h3>
+          <div id="a5" class="accordion-collapse collapse" data-bs-parent="#acc01">
+            <div class="accordion-body">Paneles flotantes o anclados (Gestor de objetos, Propiedades del objeto, Transformaciones) que se activan desde el menú Ventana → Cuadros de acoplamiento. Vivirás gran parte del tiempo dentro del <em>Gestor de objetos</em>.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a6"><i class="bi bi-rulers me-2"></i>&nbsp;Reglas, guías y barra de estado</button></h3>
+          <div id="a6" class="accordion-collapse collapse" data-bs-parent="#acc01">
+            <div class="accordion-body">Arrastra desde la regla superior o izquierda para crear guías. La barra de estado inferior confirma qué herramienta está activa, el relleno/contorno del objeto seleccionado y su posición o tamaño exacto.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">1.3</span>
+        <h2>Crear y configurar tu primer documento</h2>
+        <p>Un documento mal configurado desde el inicio genera problemas al exportar o imprimir. Define estos cuatro valores siempre al crear un archivo nuevo (<kbd class="key">Ctrl</kbd>+<kbd class="key">N</kbd>):</p>
+      </div>
+
+      <table class="table-shortcuts reveal">
+        <thead><tr><th>Parámetro</th><th>Para qué sirve</th><th>Valor típico</th></tr></thead>
+        <tbody>
+          <tr><td>Tamaño de página</td><td>Dimensiones finales del diseño</td><td>A4, Carta o tamaño personalizado en mm</td></tr>
+          <tr><td>Unidad de medida</td><td>Cómo se interpretan las coordenadas</td><td>Milímetros para impresión, píxeles para digital</td></tr>
+          <tr><td>Modo de color primario</td><td>Espacio de color del documento</td><td>CMYK para imprenta · RGB para pantalla</td></tr>
+          <tr><td>Resolución</td><td>Solo afecta a los rellenos de mapa de bits</td><td>300 ppp para imprenta · 72–150 ppp para web</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout warn reveal">
+        <span class="label"><i class="bi bi-exclamation-triangle"></i> Cuidado</span>
+        Cambiar el modo de color a mitad de proyecto puede alterar tonos ya aplicados. Decide CMYK o RGB
+        <strong>antes</strong> de empezar a colorear, según el destino final de tu diseño.
+      </div>
+
+      <div class="exercise reveal">
+        <h4><i class="bi bi-pencil-square"></i> Ejercicio 1.1</h4>
+        <p class="text-dim mb-0">Crea un documento nuevo de tamaño A4 en modo CMYK con 300 ppp. Cambia la unidad de medida a milímetros, activa las reglas (<kbd class="key">Ctrl</kbd>+<kbd class="key">Shift</kbd>+<kbd class="key">R</kbd> abre el panel de opciones) y arrastra dos guías: una vertical a 10 mm del borde y una horizontal a 15 mm.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container-narrow">
+      <div class="lesson-pager reveal">
+        
+        <a class="pager-link prev" href="../../index.html">
+          <span class="dir"><i class="bi bi-arrow-left"></i> Volver</span>
+          <strong>Portada de la guía</strong>
+        </a>
+        
+        <a class="pager-link next" href="02-seleccion-formas-transformacion.html">
+          <span class="dir">Siguiente <i class="bi bi-arrow-right"></i></span>
+          <strong>02 · Selección, formas y transformación</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../../assets/js/three-bg.js"></script>
+<script src="../../assets/js/site.js?v=4"></script>
+<script src="../../assets/js/motion.js?v=4"></script>
+</body>
+</html>

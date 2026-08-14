@@ -1,0 +1,132 @@
+/* =========================================================
+   Responsivo mobile-first — base construida desde 360px
+   ========================================================= */
+
+/* --- Base (360px+): header compacto, nav en cajón lateral --- */
+.topbar-inner{ min-height:56px; padding:.5rem .9rem; gap:.6rem; }
+.brand-logo{ width:30px; height:34px; }
+.brand-text{ font-size:.95rem; }
+.brand-text small{ font-size:.62rem; }
+.icon-btn{ width:38px; height:38px; }
+.menu-toggle{ display:grid; }
+
+.main-nav{
+  display:flex; flex-direction:column; align-items:stretch; gap:.15rem;
+  position:fixed; top:0; right:0; height:100vh; width:min(84vw, 320px);
+  background:var(--panel); border-left:1px solid var(--line);
+  padding:1.3rem 1rem; overflow-y:auto; z-index:46;
+  box-shadow:var(--shadow-lg);
+  transform:translateX(105%); transition:transform .28s ease;
+  margin:0;
+}
+.main-nav.is-open{ transform:translateX(0); }
+.h-link{ font-size:1rem; padding:.7rem .8rem; width:100%; justify-content:flex-start; }
+.h-dropdown{ width:100%; }
+.h-dropdown > .h-link{ justify-content:space-between; }
+.dd-menu{
+  position:static; opacity:1; visibility:visible; transform:none;
+  width:100%; box-shadow:none; border:none; background:transparent;
+  padding:.1rem 0 .3rem .6rem; max-height:none; margin:0;
+  transition:none;
+}
+.h-dropdown:not(.is-open) .dd-menu{ display:none; }
+.h-dropdown.is-open .dd-menu{ display:block; }
+.dd-item{ font-size:.9rem; }
+.dd-meta{ display:none; }
+.nav-backdrop{ display:block; }
+
+.search-overlay{ padding-top:10vh; }
+
+.hero{ padding:2.6rem 0 2rem; }
+.hero-home{ min-height:calc(100svh - 56px); padding:3rem 0 3.5rem; }
+.scroll-hint{ display:none; }
+.hero .row{ flex-direction:column-reverse; }
+.hero-canvas-wrap{ margin-bottom:1.6rem; aspect-ratio:16/11; }
+.hero h1{ max-width:none; }
+.hero-stats{ gap:1rem 1.6rem; }
+.hero-stat b{ font-size:1.25rem; }
+
+.container-narrow{ padding:0 1rem; }
+section{ padding:2rem 0; }
+.card-vec{ padding:1.2rem; }
+.table-shortcuts{ font-size:.82rem; }
+.table-shortcuts th, .table-shortcuts td{ padding:.5rem .45rem; }
+.lesson-pager{ flex-direction:column; }
+.pager-link.next{ text-align:left; }
+.btn-vec{ width:100%; justify-content:center; }
+.hero-ctas{ display:flex; flex-direction:column; gap:.7rem; }
+.steps-vec{ grid-template-columns:1fr; }
+
+/* --- >= 480px: pequeños ajustes de respiración --- */
+@media (min-width:480px){
+  .hero-ctas{ flex-direction:row; }
+  .btn-vec{ width:auto; }
+  .container-narrow{ padding:0 1.25rem; }
+}
+
+/* --- >= 576px --- */
+@media (min-width:576px){
+  .hero-stats{ gap:1.4rem 2.4rem; }
+  .steps-vec{ grid-template-columns:repeat(2,1fr); }
+}
+
+/* --- >= 768px --- */
+@media (min-width:768px){
+  section{ padding:2.8rem 0; }
+  .hero{ padding:4rem 0 2.4rem; }
+}
+
+/* --- >= 992px: nav horizontal completo, se acaba el modo cajón --- */
+@media (min-width:992px){
+  .hero-home{ min-height:calc(100svh - 64px); padding:2rem 0 3.5rem; }
+  .scroll-hint{ display:flex; }
+  .topbar-inner{ min-height:64px; padding:.7rem 1.25rem; }
+  .menu-toggle{ display:none; }
+  .nav-backdrop{ display:none; }
+
+  .main-nav{
+    display:flex; flex-direction:row; align-items:center; gap:.15rem;
+    position:static; height:auto; width:auto;
+    background:none; border:none; box-shadow:none; transform:none;
+    padding:0; overflow:visible;
+    margin-left:auto; margin-right:auto;
+  }
+  .h-link{ width:auto; font-size:.9rem; padding:.55rem .75rem; }
+  .h-dropdown{ width:auto; }
+  .h-dropdown > .h-link{ justify-content:flex-start; }
+  .dd-menu{
+    position:absolute; top:calc(100% + .5rem); left:0;
+    display:block;
+    width:min(360px, 92vw);
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:14px; box-shadow:var(--shadow-lg);
+    padding:.45rem;
+    opacity:0; visibility:hidden; transform:translateY(8px);
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+    max-height:min(66vh, 480px); overflow-y:auto;
+  }
+  .h-dropdown:hover .dd-menu, .h-dropdown:focus-within .dd-menu, .h-dropdown.is-open .dd-menu{
+    opacity:1; visibility:visible; transform:none;
+  }
+  .h-dropdown:not(.is-open) .dd-menu{ display:block; }
+  .dd-item{ font-size:.86rem; }
+  .dd-meta{ display:inline; }
+
+  .hero .row{ flex-direction:row; }
+  .hero{ text-align:left; padding:5.5rem 0 3rem; }
+  .hero-canvas-wrap{ margin-bottom:0; aspect-ratio:4/3; }
+  .steps-vec{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* --- >= 1200px: algo más de aire en los enlaces --- */
+@media (min-width:1200px){
+  .h-link{ padding:.55rem .85rem; }
+}
+
+/* Pantallas muy pequeñas (360-374px): compactar tipografía del hero */
+@media (max-width:374px){
+  .hero h1{ font-size:1.8rem; }
+  .hero p.lead{ font-size:.98rem; }
+  .brand-text{ font-size:.85rem; }
+  .icon-btn{ width:36px; height:36px; }
+}

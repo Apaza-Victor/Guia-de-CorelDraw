@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>08 · Exportación e impresión · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Formatos, resolución, CMYK, sangrado y prepress — Guía CorelDraw de Cero a Experto.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../../assets/css/style.css?v=4">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=4">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
+      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
+      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
+      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
+      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-printer"></i> Lección 08 · Avanzado</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Exportación e impresión</h1>
+      <p class="lead js-anim-lead">Un diseño perfecto en pantalla puede fallar en la imprenta o pesar demasiado en la web si no conoces los formatos y ajustes correctos de salida.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+
+      <div class="section-head reveal">
+        <span class="kicker">8.1</span>
+        <h2>Formatos de exportación y cuándo usarlos</h2>
+      </div>
+
+      <table class="table-shortcuts reveal">
+        <thead><tr><th>Formato</th><th>Úsalo para</th></tr></thead>
+        <tbody>
+          <tr><td>.CDR</td><td>Archivo nativo editable; guarda todo el historial de capas y efectos</td></tr>
+          <tr><td>.PDF (imprenta)</td><td>Entrega a imprenta: incrusta fuentes, sangrado y marcas de corte</td></tr>
+          <tr><td>.AI / .EPS</td><td>Compatibilidad con Illustrator u otros flujos vectoriales</td></tr>
+          <tr><td>.SVG</td><td>Vectores para web: iconos, ilustraciones escalables ligeras</td></tr>
+          <tr><td>.PNG</td><td>Mapa de bits con fondo transparente para web o redes sociales</td></tr>
+          <tr><td>.JPG</td><td>Fotografías o composiciones sin transparencia; buena compresión</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">8.2</span>
+        <h2>Preparar un archivo para imprenta</h2>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-aspect-ratio"></i></div>
+            <h3>Sangrado (bleed)</h3>
+            <p>Extiende los elementos que tocan el borde 2–3 mm más allá del tamaño final, para evitar líneas blancas al cortar. Se define en Diseño → Configuración del documento.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-droplet"></i></div>
+            <h3>Modo de color</h3>
+            <p>Confirma que el documento esté en CMYK antes de exportar. Revisa cada objeto en el cuadro Propiedades del objeto por si algún color quedó en RGB.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-type"></i></div>
+            <h3>Fuentes</h3>
+            <p>Convierte todo el texto a curvas (<kbd class="key">Ctrl</kbd>+<kbd class="key">Q</kbd>) antes de enviar el archivo, salvo que la imprenta pida lo contrario.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-layers-fill"></i></div>
+            <h3>Vista previa de separaciones</h3>
+            <p>Ventana → Cuadros de acoplamiento → Vista previa de separaciones, para ver cómo se dividirá el archivo en placas C, M, Y y K.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn reveal">
+        <span class="label"><i class="bi bi-exclamation-triangle"></i> Cuidado</span>
+        Evita el "negro enriquecido" (una mezcla de CMY + K) en textos pequeños: en offset puede generar
+        desalineación de placas y texto borroso. Para texto fino usa negro 100% K puro.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">8.3</span>
+        <h2>Exportar para web</h2>
+        <p>Usa <em>Archivo → Exportar</em> (<kbd class="key">Ctrl</kbd>+<kbd class="key">E</kbd>) y elige PNG con fondo transparente para logotipos, o "Exportar para Web" para optimizar el peso comparando calidad vs. tamaño de archivo en tiempo real antes de guardar.</p>
+      </div>
+
+      <div class="exercise reveal">
+        <h4><i class="bi bi-pencil-square"></i> Ejercicio 8.1</h4>
+        <p class="text-dim mb-0">Toma cualquier diseño que hayas hecho en lecciones anteriores. Configura un sangrado de 3 mm, convierte los textos a curvas, revisa la vista previa de separaciones y expórtalo como PDF listo para imprenta. Luego expórtalo también como PNG transparente para uso digital.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container-narrow">
+      <div class="lesson-pager reveal">
+        
+        <a class="pager-link prev" href="07-efectos-especiales.html">
+          <span class="dir"><i class="bi bi-arrow-left"></i> Anterior</span>
+          <strong>07 · Efectos especiales</strong>
+        </a>
+        
+        <a class="pager-link next" href="09-atajos-productividad.html">
+          <span class="dir">Siguiente <i class="bi bi-arrow-right"></i></span>
+          <strong>09 · Atajos y productividad</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../../assets/js/three-bg.js"></script>
+<script src="../../assets/js/site.js?v=4"></script>
+<script src="../../assets/js/motion.js?v=4"></script>
+</body>
+</html>

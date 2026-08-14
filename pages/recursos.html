@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Recursos · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Plantillas, paletas, enlaces oficiales y comunidades para practicar CorelDraw.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../assets/css/style.css?v=4">
+<link rel="stylesheet" href="../assets/css/responsive.css?v=4">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <a class="h-link" href="../index.html">Inicio</a>      <a class="h-link" href="modulos.html">Módulos</a>
+      <a class="h-link active" href="recursos.html">Recursos</a>
+      <a class="h-link" href="glosario.html">Glosario</a>
+      <a class="h-link" href="comandos.html">Comandos</a>
+      <a class="h-link" href="herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-collection"></i> Biblioteca de apoyo</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Recursos</h1>
+      <p class="lead js-anim-lead">Todo lo que complementa las lecciones: plantillas para descargar, paletas listas para usar, documentación oficial y comunidades donde seguir creciendo.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <div class="section-head reveal">
+        <span class="kicker">Webs gratuitas</span>
+        <h2>Recursos gratuitos por categoría</h2>
+        <p>Un directorio de sitios útiles y gratuitos (o con plan gratis) para diseñar: imágenes, vectores, logos, fondos, color, tipografías e inspiración.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-image"></i></div>
+            <h3>PNG y transparentes</h3>
+            <ul class="res-links">
+              <li><a href="https://www.pngwing.com" target="_blank" rel="noopener">PNGWing <small>Recortes PNG sin fondo de todo tipo</small></a></li>
+              <li><a href="https://www.pngall.com" target="_blank" rel="noopener">PNG All <small>PNG organizados por categorías</small></a></li>
+              <li><a href="https://www.freepnglogos.com" target="_blank" rel="noopener">Free PNG Logos <small>Logos en PNG transparente</small></a></li>
+              <li><a href="https://www.transparenttextures.com" target="_blank" rel="noopener">Transparent Textures <small>Texturas para fondos sin patrón</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-bezier2"></i></div>
+            <h3>Vectores e ilustraciones</h3>
+            <ul class="res-links">
+              <li><a href="https://www.freepik.com" target="_blank" rel="noopener">Freepik <small>Vectores e ilustraciones (cuenta gratis)</small></a></li>
+              <li><a href="https://www.vecteezy.com" target="_blank" rel="noopener">Vecteezy <small>Vectores y mockups con atribución</small></a></li>
+              <li><a href="https://pixabay.com" target="_blank" rel="noopener">Pixabay <small>Vectores, fotos e ilustraciones CC0</small></a></li>
+              <li><a href="https://undraw.co" target="_blank" rel="noopener">unDraw <small>Ilustraciones SVG editables en color</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-camera"></i></div>
+            <h3>Fotos libres</h3>
+            <ul class="res-links">
+              <li><a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash <small>Fotos profesionales de uso libre</small></a></li>
+              <li><a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels <small>Fotos y vídeos gratis sin atribución</small></a></li>
+              <li><a href="https://pixabay.com" target="_blank" rel="noopener">Pixabay <small>Banco de imágenes de alta resolución</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-lightbulb"></i></div>
+            <h3>Inspiración</h3>
+            <ul class="res-links">
+              <li><a href="https://www.behance.net" target="_blank" rel="noopener">Behance <small>Portafolios de diseño profesional</small></a></li>
+              <li><a href="https://dribbble.com" target="_blank" rel="noopener">Dribbble <small>Tendencias y shots de diseño gráfico</small></a></li>
+              <li><a href="https://www.awwwards.com" target="_blank" rel="noopener">Awwwards <small>Referentes web premiados</small></a></li>
+              <li><a href="https://www.pinterest.com" target="_blank" rel="noopener">Pinterest <small>Moodboards y tendencias visuales</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-stars"></i></div>
+            <h3>Logos</h3>
+            <ul class="res-links">
+              <li><a href="https://seeklogo.com" target="_blank" rel="noopener">SeekLogo <small>Buscador de logos de marcas</small></a></li>
+              <li><a href="https://worldvectorlogo.com" target="_blank" rel="noopener">World Vector Logo <small>Logos de marcas en SVG</small></a></li>
+              <li><a href="https://logomakr.com" target="_blank" rel="noopener">LogoMakr <small>Creador de logos gratis online</small></a></li>
+              <li><a href="https://www.canva.com" target="_blank" rel="noopener">Canva <small>Editor con creador de logos incluido</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-eraser"></i></div>
+            <h3>Eliminar fondos y edición</h3>
+            <ul class="res-links">
+              <li><a href="https://www.remove.bg" target="_blank" rel="noopener">Remove.bg <small>Quita el fondo de una foto en segundos</small></a></li>
+              <li><a href="https://bgremover.ai" target="_blank" rel="noopener">BgRemover <small>Elimina fondos con IA, sin registro</small></a></li>
+              <li><a href="https://www.photopea.com" target="_blank" rel="noopener">Photopea <small>Editor de imágenes online tipo Photoshop</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-palette"></i></div>
+            <h3>Color y paletas</h3>
+            <ul class="res-links">
+              <li><a href="https://colorhunt.co" target="_blank" rel="noopener">Color Hunt <small>Paletas listas para copiar</small></a></li>
+              <li><a href="https://coolors.co" target="_blank" rel="noopener">Coolors <small>Generador de paletas rápido</small></a></li>
+              <li><a href="https://color.adobe.com" target="_blank" rel="noopener">Adobe Color <small>Rueda cromática y temas</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-fonts"></i></div>
+            <h3>Tipografías</h3>
+            <ul class="res-links">
+              <li><a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts <small>Fuentes gratuitas para todo uso</small></a></li>
+              <li><a href="https://www.dafont.com" target="_blank" rel="noopener">DaFont <small>Miles de fuentes descargables</small></a></li>
+              <li><a href="https://www.fontsquirrel.com" target="_blank" rel="noopener">Font Squirrel <small>Fuentes libres y kits webfont</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-phone"></i></div>
+            <h3>Mockups y maquetas</h3>
+            <ul class="res-links">
+              <li><a href="https://mockupfree.co" target="_blank" rel="noopener">Mockupfree <small>Mockups PSD gratuitos de calidad</small></a></li>
+              <li><a href="https://www.smartmockups.com" target="_blank" rel="noopener">Smartmockups <small>Maquetas online sin diseñar</small></a></li>
+              <li><a href="https://graphicburger.com" target="_blank" rel="noopener">GraphicBurger <small>Freebies y mockups profesionales</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-tools"></i></div>
+            <h3>Directorios de herramientas</h3>
+            <ul class="res-links">
+              <li><a href="https://design.tools" target="_blank" rel="noopener">Design.tools <small>El directorio de herramientas de diseño</small></a></li>
+              <li><a href="https://www.toolfinder.co" target="_blank" rel="noopener">Tool Finder <small>Busca herramientas por categoría</small></a></li>
+              <li><a href="https://www.designresources.dev" target="_blank" rel="noopener">Design Resources <small>Guías y repositorios para diseñadores</small></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout warn reveal mt-4">
+        <span class="label"><i class="bi bi-exclamation-triangle"></i> Licencias</span>
+        Revisa siempre los términos de cada web antes de usar recursos en proyectos comerciales:
+        algunas piden atribución y otras limitan el uso sin cuenta de pago.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">Aprender de las fuentes</span>
+        <h2>Referencias oficiales</h2>
+        <p>Documentación y canales de Corel para consultar dudas con la versión que tengas.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-book"></i></div>
+            <h3>Guía del usuario</h3>
+            <p>El manual oficial de CorelDRAW Graphics Suite explica cada herramienta y panel.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-play-btn"></i></div>
+            <h3>Canal de Corel</h3>
+            <p>Tutoriales en vídeo oficiales, desde lo básico hasta técnicas profesionales.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-mortarboard"></i></div>
+            <h3>Certificación CCA</h3>
+            <p>La certificación oficial de Corel valida tus habilidades ante clientes y empleadores.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">No estás solo</span>
+        <h2>Comunidades</h2>
+        <p>Comparte tus proyectos, pide crítica constructiva y resuelve dudas.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-people"></i></div>
+            <h3>Foros de diseño</h3>
+            <p>Foros en español de diseño vectorial, rotulación y prepress.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-discord"></i></div>
+            <h3>Discord de diseñadores</h3>
+            <p>Canales activos de diseño gráfico donde CorelDraw sigue teniendo gran comunidad.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 reveal">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-dribbble"></i></div>
+            <h3>Portafolios</h3>
+            <p>Publica tu trabajo en portafolios para atraer clientes de rotulación y branding.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip reveal mt-4">
+        <span class="label"><i class="bi bi-stars"></i> Consejo</span>
+        Los mejores recursos son los que <strong>usas</strong>. Descarga una plantilla y desmonta cómo está
+        construida: es el ejercicio más rápido para aprender trucos de archivos reales.
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../assets/js/three-bg.js"></script>
+<script src="../assets/js/site.js?v=4"></script>
+<script src="../assets/js/motion.js?v=4"></script>
+</body>
+</html>
