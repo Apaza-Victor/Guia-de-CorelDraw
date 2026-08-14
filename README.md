@@ -2,6 +2,8 @@
 
 > Sitio web estático (HTML/CSS/JS puro) para aprender **CorelDRAW** paso a paso: de principiante absoluto hasta nivel certificación CCA.
 
+**🌐 Sitio en vivo:** [apaza-victor.github.io/Guia-de-CorelDraw](https://apaza-victor.github.io/Guia-de-CorelDraw/)
+
 ## ✨ Características
 
 - **20 páginas completas**: portada + 11 módulos/lecciones + páginas de apoyo (qué es CorelDraw, cómo usar la guía, método, recursos, glosario, comandos, herramientas).
@@ -82,10 +84,6 @@ python -m http.server 8000
 **© 2026 Víctor Hugo Apaza (Apaza-Victor). Todos los derechos reservados.**
 
 El contenido, la estructura, el diseño y el código de esta guía son propiedad de su autor. Queda **prohibida** la reproducción total o parcial, la distribución, la modificación o la publicación de este material sin autorización previa y por escrito del titular.
-
-- Autor: **Víctor Hugo Apaza**
-- Repositorio: [github.com/Apaza-Victor/Guia-de-CorelDraw](https://github.com/Apaza-Victor/Guia-de-CorelDraw)
-- Contacto: apazavictor529@gmail.com
 
 ### Aviso de marca
 
