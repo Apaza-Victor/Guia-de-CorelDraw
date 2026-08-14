@@ -256,10 +256,18 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, .nav-link:focus-visib
   display:grid; place-items:center; font-size:1.2rem; cursor:pointer;
 }
 
+/* Cabecera interna del cajón móvil (visible solo en el drawer) */
+.nav-head{
+  display:none;
+  align-items:center; justify-content:space-between; gap:.6rem;
+  padding-bottom:.85rem; margin-bottom:.35rem;
+  border-bottom:1px solid var(--line);
+}
+
 /* Backdrop del menú móvil */
 .nav-backdrop{
   position:fixed; inset:0; background:rgba(5,6,9,.6);
-  backdrop-filter:blur(2px); z-index:45;
+  backdrop-filter:blur(2px); z-index:35;
   opacity:0; pointer-events:none; transition:opacity .25s ease;
 }
 .nav-backdrop.is-open{ opacity:1; pointer-events:auto; }
@@ -274,12 +282,18 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, .nav-link:focus-visib
 }
 [data-theme="light"] .search-overlay{ background:rgba(20,28,42,.45); }
 .search-overlay.is-open{ opacity:1; visibility:visible; }
-.search-box{ width:min(640px,100%); }
+.search-box{ width:min(640px,100%); opacity:0; transform:translateY(-10px); transition:opacity .22s ease, transform .22s ease; }
+.search-overlay.is-open .search-box{ opacity:1; transform:none; }
 .search-field{
   display:flex; align-items:center; gap:.65rem;
   background:var(--panel); border:1px solid var(--line);
   border-radius:14px; padding:.55rem .7rem .55rem 1rem;
   box-shadow:var(--shadow-lg);
+  transition:border-color .18s ease, box-shadow .18s ease;
+}
+.search-field:focus-within{
+  border-color:rgba(33,199,214,.55);
+  box-shadow:0 0 0 3px rgba(33,199,214,.14), var(--shadow-lg);
 }
 .search-field input{
   flex:1; min-width:0; background:none; border:none; outline:none;
@@ -289,17 +303,42 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, .nav-link:focus-visib
 .search-results{
   margin-top:.55rem; overflow:hidden;
   background:var(--panel); border:1px solid var(--line); border-radius:14px;
+  box-shadow:var(--shadow-lg);
 }
 .search-results a{
-  display:block; padding:.7rem 1rem;
+  display:flex; align-items:center; gap:.8rem;
+  padding:.65rem .9rem;
   border-bottom:1px solid var(--line-soft);
   color:var(--text);
+  transition:background .15s ease;
 }
 .search-results a:last-child{ border-bottom:none; }
 .search-results a:hover{ background:var(--panel-2); }
+.search-results a:hover .s-go{ opacity:1; transform:translate(1px,-1px); }
+.s-icon{
+  flex:none; width:38px; height:38px; border-radius:10px;
+  display:grid; place-items:center;
+  background:var(--line-soft); border:1px solid var(--line);
+  color:var(--cyan); font-size:1rem;
+}
+.s-body{ flex:1; min-width:0; }
 .search-results a strong{ display:block; font-family:var(--f-display); font-size:.92rem; color:var(--key); }
-.search-results a small{ display:block; color:var(--text-dim); font-size:.8rem; }
-.search-results .no-results{ padding:1rem; color:var(--text-dim); }
+.search-results a small{ display:block; color:var(--text-dim); font-size:.8rem; line-height:1.4; }
+.s-go{ flex:none; color:var(--text-faint); opacity:0; transition:opacity .15s ease, transform .15s ease; }
+.search-results .no-results{ padding:1.1rem; color:var(--text-dim); display:flex; align-items:flex-start; gap:.6rem; font-size:.92rem; }
+.search-results .no-results i{ color:var(--magenta); font-size:1.1rem; margin-top:.1rem; }
+.search-hint{
+  display:flex; align-items:center; justify-content:center; gap:1.3rem;
+  margin-top:.75rem; color:var(--text-faint);
+  font-family:var(--f-mono); font-size:.72rem;
+}
+.search-hint span{ display:inline-flex; align-items:center; gap:.4rem; }
+.search-hint kbd{
+  background:var(--panel); border:1px solid var(--line); border-bottom-width:2px;
+  border-radius:5px; padding:.08rem .42rem;
+  font-family:var(--f-mono); font-size:.68rem; color:var(--text-dim);
+}
+.search-hint b{ color:var(--cyan); font-weight:600; }
 
 /* ---------- Layout con sidebar ---------- */
 .app-shell{

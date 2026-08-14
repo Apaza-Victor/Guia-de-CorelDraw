@@ -19,8 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=4">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=4">
+<link rel="stylesheet" href="../../assets/css/style.css?v=8">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
@@ -37,6 +37,13 @@
     </a>
 
     <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
       <a class="h-link" href="../../pages/recursos.html">Recursos</a>
       <a class="h-link" href="../../pages/glosario.html">Glosario</a>
@@ -62,6 +69,11 @@
       <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
     </div>
     <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
   </div>
 </div>
 
@@ -208,6 +220,7 @@
         <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
       </div>
       <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
     </div>
     <div>
       <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
@@ -223,7 +236,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=4"></script>
-<script src="../../assets/js/motion.js?v=4"></script>
+<script src="../../assets/js/site.js?v=8"></script>
+<script src="../../assets/js/motion.js?v=8"></script>
 </body>
 </html>

@@ -34,20 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.getElementById('mainNav');
   const navToggle = document.getElementById('navToggle');
   const navBackdrop = document.getElementById('navBackdrop');
+  const navClose = document.getElementById('navClose');
 
+  function syncScrollLock() {
+    const anyOpen = (mainNav && mainNav.classList.contains('is-open')) ||
+                    (searchOverlay && searchOverlay.classList.contains('is-open'));
+    document.body.style.overflow = anyOpen ? 'hidden' : '';
+  }
   function openNav() {
     if (mainNav) mainNav.classList.add('is-open');
     if (navBackdrop) navBackdrop.classList.add('is-open');
     if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
+    syncScrollLock();
   }
   function closeNav() {
     if (mainNav) mainNav.classList.remove('is-open');
     if (navBackdrop) navBackdrop.classList.remove('is-open');
     if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+    syncScrollLock();
   }
   if (navToggle) navToggle.addEventListener('click', () => {
     mainNav && mainNav.classList.contains('is-open') ? closeNav() : openNav();
   });
+  if (navClose) navClose.addEventListener('click', closeNav);
   if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
 
   /* ---------- Dropdown "Módulos" ---------- */
@@ -103,6 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
     { t:'Método de la guía', d:'Aprender viendo, practicando y repitiendo.', k:'metodo metodologia niveles basico intermedio avanzado', u:'pages/metodo.html' },
   ];
 
+  const SRCH_ICON = [
+    ['lecciones/', 'bi-journal-text'],
+    ['modulos', 'bi-grid-3x3-gap'],
+    ['recursos', 'bi-collection'],
+    ['glosario', 'bi-book'],
+    ['comandos', 'bi-keyboard'],
+    ['herramientas', 'bi-tools'],
+    ['como-usar', 'bi-lightbulb'],
+    ['que-es', 'bi-question-circle'],
+    ['metodo', 'bi-diagram-3']
+  ];
+  function srchIcon(u) {
+    for (const pair of SRCH_ICON) if (u.indexOf(pair[0]) !== -1) return pair[1];
+    return 'bi-house';
+  }
+
   function renderSearch(query) {
     if (!searchResults) return;
     const term = (query || '').trim().toLowerCase();
@@ -110,11 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
       ? SEARCH_INDEX.filter(i => (i.t + ' ' + i.d + ' ' + i.k).toLowerCase().includes(term)).slice(0, 12)
       : SEARCH_INDEX.slice(0, 8);
     if (!matches.length) {
-      searchResults.innerHTML = '<div class="no-results">Sin resultados para “' + query.trim() + '”. Prueba con otro término.</div>';
+      searchResults.innerHTML = '<div class="no-results"><i class="bi bi-search"></i><span>Sin resultados para “' + query.trim() + '”. Prueba con otro término.</span></div>';
       return;
     }
     searchResults.innerHTML = matches.map(m =>
-      '<a href="' + siteRoot + m.u + '"><strong>' + m.t + '</strong><small>' + m.d + '</small></a>'
+      '<a href="' + siteRoot + m.u + '">' +
+        '<span class="s-icon"><i class="bi ' + srchIcon(m.u) + '"></i></span>' +
+        '<span class="s-body"><strong>' + m.t + '</strong><small>' + m.d + '</small></span>' +
+        '<i class="bi bi-arrow-up-right s-go"></i>' +
+      '</a>'
     ).join('');
   }
 
@@ -122,9 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchOverlay) { searchOverlay.classList.add('is-open'); searchOverlay.setAttribute('aria-hidden', 'false'); }
     renderSearch('');
     if (searchInput) searchInput.focus();
+    syncScrollLock();
   }
   function closeSearch() {
     if (searchOverlay) { searchOverlay.classList.remove('is-open'); searchOverlay.setAttribute('aria-hidden', 'true'); }
+    syncScrollLock();
   }
   if (searchToggle) searchToggle.addEventListener('click', openSearch);
   if (searchClose) searchClose.addEventListener('click', closeSearch);
@@ -137,6 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keydown', (e) => {
+    const typing = /INPUT|TEXTAREA|SELECT/.test(e.target.tagName) || e.target.isContentEditable;
+    if (e.key === '/' && !typing) {
+      e.preventDefault();
+      openSearch();
+    }
     if (e.key === 'Escape') {
       closeSearch();
       closeNav();
