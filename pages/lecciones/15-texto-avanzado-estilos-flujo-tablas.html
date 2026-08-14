@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>15 · Texto avanzado: estilos, flujo y tablas · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Estilos de carácter y párrafo, flujo de texto, columnas, tablas y texto envolvente — Guía CorelDraw de Cero a Experto.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-type"></i> Lección 15 · Intermedio-avanzado</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Texto avanzado: estilos, flujo y tablas</h1>
+      <p class="lead js-anim-lead">Un titular bonito se hace con la lección 05. Un folleto profesional, con esta: estilos reutilizables, texto que fluye entre marcos, columnas, tablas y tipografía que respira sobre las imágenes.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+
+      <div class="section-head reveal">
+        <span class="kicker">15.1</span>
+        <h2>Estilos de carácter y de párrafo</h2>
+        <p>En <em>Ventana → Cuadros de acoplamiento → Estilos de objeto</em> (o la lista de estilos de la barra de propiedades) puedes guardar configuraciones de fuente, tamaño, interlineado y color para reutilizarlas.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-textarea-t"></i></div>
+            <h3>Estilos de carácter</h3>
+            <p>Definen la fuente, el peso, el tamaño y el color del texto. "H1 marca", "Cuerpo nota" o "Precio" se aplican con un clic y se actualizan en todo el documento si editas el estilo.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-text-paragraph"></i></div>
+            <h3>Estilos de párrafo</h3>
+            <p>Añaden alineación, sangrías, interlineado, viñetas y tabuladores. Es la diferencia entre un catálogo caótico y uno donde todo "suena" igual en cada página.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Si cambias de opinión sobre la fuente de todos los titulares, edita el <em>estilo</em> una sola
+        vez: no busques título por título.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">15.2</span>
+        <h2>Flujo de texto y columnas</h2>
+        <p>Ya enlazaste marcos en la lección 05; ahora llévalo más lejos: el texto puede fluir entre marcos de distintas páginas y dentro de columnas definidas en un mismo marco.</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 176" role="img" aria-label="Texto en columnas que fluye entre marcos" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="176" style="fill:var(--ink-soft)"/>
+            <text x="20" y="26" class="t-hl">Flujo de texto entre columnas y marcos</text>
+            <rect x="30" y="46" width="200" height="110" rx="6" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="30" y="46" width="98" height="110" rx="6" style="fill:none;stroke:var(--text-faint);stroke-width:1" stroke-dasharray="3 3"/>
+            <text x="46" y="66" class="t-sm" style="font-size:9px">Un párrafo largo que llena</text>
+            <text x="46" y="80" class="t-sm" style="font-size:9px">la primera columna y continúa</text>
+            <text x="46" y="94" class="t-sm" style="font-size:9px">en la segunda… la columna</text>
+            <text x="46" y="108" class="t-sm" style="font-size:9px">izquierda termina y el texto</text>
+            <text x="46" y="122" class="t-sm" style="font-size:9px">sigue hacia abajo y después</text>
+            <text x="132" y="66" class="t-sm" style="font-size:9px">salta al marco siguiente,</text>
+            <text x="132" y="80" class="t-sm" style="font-size:9px">en la siguiente página, sin</text>
+            <text x="132" y="94" class="t-sm" style="font-size:9px">que nadie copie nada a mano.</text>
+            <rect x="248" y="46" width="140" height="110" rx="6" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="262" y="46" width="112" height="110" rx="6" style="fill:none;stroke:var(--text-faint);stroke-width:1" stroke-dasharray="3 3"/>
+            <text x="268" y="66" class="t-sm" style="font-size:9px">El flujo está enlazado por</text>
+            <text x="268" y="80" class="t-sm" style="font-size:9px">la flecha que se muestra en</text>
+            <text x="268" y="94" class="t-sm" style="font-size:9px">el marco de origen al hacer</text>
+            <text x="268" y="108" class="t-sm" style="font-size:9px">clic en el indicador de flujo.</text>
+            <path d="M236,100 L244,100" style="stroke:var(--cyan);stroke-width:2;fill:none"/>
+            <path d="M242,94 L250,100 L242,106" style="stroke:var(--cyan);stroke-width:2;fill:none"/>
+            <rect x="430" y="46" width="200" height="110" rx="6" style="fill:var(--panel);stroke:var(--line)"/>
+            <text x="530" y="74" text-anchor="middle" class="t-label">Texto envolvente</text>
+            <circle cx="530" cy="108" r="22" style="fill:var(--magenta);opacity:.65"/>
+            <text x="530" y="112" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:700">IMAGEN</text>
+            <text x="448" y="92" class="t-sm" style="font-size:8px">el texto rodea</text>
+            <text x="612" y="100" class="t-sm" style="font-size:8px">la figura,</text>
+            <text x="448" y="126" class="t-sm" style="font-size:8px">por ambos</text>
+            <text x="612" y="132" class="t-sm" style="font-size:8px">lados</text>
+            <path d="M398,100 L408,100" style="stroke:var(--magenta);stroke-width:2;fill:none"/>
+            <path d="M404,94 L412,100 L404,106" style="stroke:var(--magenta);stroke-width:2;fill:none"/>
+          </g>
+        </svg>
+        <div class="fig-caption">El <b>indicador de flujo</b> enlaza marcos; el <b>texto envolvente</b> hace que el texto abrace a las imágenes.</div>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        <em>Texto → Texto de relleno</em> inserta texto de muestra (lorem ipsum) para ver el ritmo de una
+        maqueta antes de tener el texto real. Y el <em>ajuste de texto</em> (botón en la barra de
+        propiedades con la figura seleccionada) elige contorno, salto de línea o desbordamiento.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">15.3</span>
+        <h2>Tablas: datos con orden</h2>
+        <p>La herramienta Tabla crea cuadrículas de celdas con texto alineado. También puedes convertir un bloque de texto separado por tabuladores en tabla, y dar formato a filas, columnas y bordes como a cualquier objeto.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-table"></i></div>
+            <h3>Crear tabla</h3>
+            <p>Con la herramienta Tabla, arrastra sobre la página y define filas y columnas. Cada celda admite texto, imágenes y hasta otra tabla.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-arrow-left-right"></i></div>
+            <h3>Texto a tabla</h3>
+            <p>Selecciona texto de párrafo y elige <em>Texto → Convertir a tabla</em>: usa tabuladores o comas como separadores de columna.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-bounding-box"></i></div>
+            <h3>Dar formato</h3>
+            <p>La barra de propiedades muestra opciones de celda: fondo, bordes, margen interno, alineación y dirección del texto.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise reveal">
+        <h4><i class="bi bi-pencil-square"></i> Ejercicio 15.1</h4>
+        <p class="text-dim mb-0">Diseña una página de revista con dos columnas de texto y una imagen central con texto envolvente por ambos lados. Añade un titular con estilo de carácter "H1" y un cuadro de datos (precio, medidas, colores) como tabla de 3 columnas. Aplica un estilo de párrafo al cuerpo y comprueba que todo el bloque respira con coherencia.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container-narrow">
+      <div class="lesson-pager reveal">
+        
+        <a class="pager-link prev" href="14-documentos-multipagina-plantillas.html">
+          <span class="dir"><i class="bi bi-arrow-left"></i> Anterior</span>
+          <strong>14 · Documentos multipágina y plantillas</strong>
+        </a>
+        
+        <a class="pager-link next" href="16-gestor-de-objetos-simbolos-avanzados.html">
+          <span class="dir">Siguiente <i class="bi bi-arrow-right"></i></span>
+          <strong>16 · Gestor de objetos y símbolos avanzados</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../../assets/js/three-bg.js"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
+</body>
+</html>

@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -119,10 +120,61 @@
         sin perder el contenido ya escrito.
       </div>
 
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 268" role="img" aria-label="Anatomía tipográfica y kerning" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="268" style="fill:var(--ink-soft)"/>
+            <text x="60" y="150" font-size="120" font-weight="700" style="fill:var(--key);font-family:Georgia,'Times New Roman',serif">hp</text>
+            <line x1="40" y1="150" x2="700" y2="150" style="stroke:var(--magenta);stroke-width:2"/>
+            <line x1="40" y1="78" x2="700" y2="78" style="stroke:var(--cyan);stroke-width:1.6"/>
+            <line x1="40" y1="98" x2="700" y2="98" style="stroke:var(--yellow);stroke-width:1.6;stroke-dasharray:6 4"/>
+            <line x1="40" y1="170" x2="700" y2="170" style="stroke:var(--cyan);stroke-width:1.6;stroke-dasharray:6 4"/>
+            <line x1="450" y1="78" x2="462" y2="78" style="stroke:var(--cyan);stroke-width:1.6"/>
+            <line x1="450" y1="98" x2="462" y2="98" style="stroke:var(--yellow);stroke-width:1.6"/>
+            <line x1="450" y1="150" x2="462" y2="150" style="stroke:var(--magenta);stroke-width:1.6"/>
+            <line x1="450" y1="170" x2="462" y2="170" style="stroke:var(--cyan);stroke-width:1.6"/>
+            <text x="470" y="70" class="t-label">ascendente · altura de capitales</text>
+            <text x="470" y="114" class="t-label">altura x (minúsculas)</text>
+            <text x="470" y="142" class="t-label">línea base</text>
+            <text x="470" y="188" class="t-label">descendente</text>
+            <text x="60" y="206" class="t-hl" style="font-size:12px">Kerning · interletraje</text>
+            <text x="60" y="240" font-size="56" style="fill:var(--key);font-family:Georgia,'Times New Roman',serif">AV</text>
+            <text x="85" y="260" text-anchor="middle" class="t-sm">kerning ajustado</text>
+            <text x="300" y="240" font-size="56" style="fill:var(--key);font-family:Georgia,'Times New Roman',serif">AV</text>
+            <text x="338" y="260" text-anchor="middle" class="t-sm">con espacio</text>
+            <line x1="312" y1="228" x2="312" y2="244" style="stroke:var(--magenta);stroke-width:1.2"/>
+            <line x1="364" y1="228" x2="364" y2="244" style="stroke:var(--magenta);stroke-width:1.2"/>
+            <line x1="312" y1="236" x2="364" y2="236" style="stroke:var(--magenta);stroke-width:1.4"/>
+          </g>
+        </svg>
+        <div class="fig-caption"><b>Anatomía tipográfica</b> — ascendente, altura x, línea base y descendente definen el esqueleto de la fuente. El <em>kerning</em> ajusta pares concretos (AV, To); el <em>interletraje</em> (tracking), rangos completos de texto.</div>
+      </div>
+
       <div class="section-head reveal mt-5">
         <span class="kicker">5.2</span>
         <h2>Ajustar texto a un trazado</h2>
         <p>Selecciona un texto artístico y un trazado abierto o cerrado, luego usa <em>Texto → Ajustar texto a trazado</em>. El texto seguirá la curva y podrás ajustar su distancia y desplazamiento desde la barra de propiedades. Es la técnica clásica de sellos, logotipos circulares e insignias.</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 300" role="img" aria-label="Texto ajustado a un trazado circular" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="arcTop" d="M 230,150 A 130,130 0 0 1 490,150"/>
+            <path id="arcBot" d="M 450,170 A 90,90 0 0 1 270,170"/>
+          </defs>
+          <rect x="0" y="0" width="720" height="300" style="fill:var(--ink-soft)"/>
+          <circle cx="360" cy="150" r="130" style="fill:none;stroke:var(--line);stroke-dasharray:6 5"/>
+          <circle cx="360" cy="170" r="90" style="fill:none;stroke:var(--line);stroke-dasharray:6 5"/>
+          <circle cx="360" cy="170" r="55" style="fill:var(--panel);stroke:var(--line)"/>
+          <text style="font-family:var(--f-display);font-weight:700;fill:var(--cyan);font-size:20px;letter-spacing:5px">
+            <textPath href="#arcTop">CERO A EXPERTO</textPath>
+          </text>
+          <text style="font-family:var(--f-display);font-weight:600;fill:var(--magenta);font-size:14px;letter-spacing:4px">
+            <textPath href="#arcBot">GUÍA CORELDRAW</textPath>
+          </text>
+          <text x="360" y="175" text-anchor="middle" style="font-family:var(--f-mono);fill:var(--text-dim);font-size:12px">CD · 2026</text>
+        </svg>
+        <div class="fig-caption"><b>Texto en trazado</b> — el texto artístico sigue la geometría de la curva. Desde la barra de propiedades ajusta la distancia al trazado y el desplazamiento horizontal sin romper el enlace.</div>
       </div>
 
       <div class="section-head reveal mt-5">
@@ -149,6 +201,42 @@
       <div class="exercise reveal">
         <h4><i class="bi bi-pencil-square"></i> Ejercicio 5.1</h4>
         <p class="text-dim mb-0">Escribe el nombre de una marca ficticia como texto artístico. Dibuja un círculo grande y ajusta el texto a su trazado superior. Duplica el círculo, reduce su tamaño y añade un eslogan corto ajustado al trazado inferior, como una insignia clásica.</p>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">5.4</span>
+        <h2>Enlazar marcos de texto</h2>
+        <p>Cuando un marco de párrafo se desborda, CorelDraw muestra un indicador de flujo. Haz clic en él y luego en otro marco (o dibuja uno nuevo) para que el texto continúe automáticamente de uno a otro.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-arrow-down-left-circle"></i></div>
+            <h3>Indicador de desborde</h3>
+            <p>Si el texto no cabe en el marco, en la parte inferior aparece un pequeño triángulo o flecha de flujo: es tu señal de que falta contenido por mostrar.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-link-45deg"></i></div>
+            <h3>Encadenar marcos</h3>
+            <p>Clic en el indicador y clic dentro de otro marco: el texto fluye de forma continua. Los marcos quedan enlazados, de modo que editar uno recalcula todo el flujo.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-arrows-angle-contract"></i></div>
+            <h3>Redimensionar el flujo</h3>
+            <p>Al estirar un marco enlazado, el texto sobrante pasa al siguiente y el resto de la cadena se reacomoda sola. Ideal para revistas y folletos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Para maquetar una revista: crea primero la cuadrícula de marcos con guías y <em>luego</em> encadénalos.
+        Cambiar la maquetación al final es cuestión de arrastrar los marcos; el texto los sigue solo.
       </div>
 
     </div>
@@ -195,7 +283,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>

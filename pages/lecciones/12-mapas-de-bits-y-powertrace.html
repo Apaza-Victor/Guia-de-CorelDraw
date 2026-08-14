@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>12 · Mapas de bits y PowerTRACE · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Importar, redimensionar, vectorizar con PowerTRACE y aplicar filtros a mapas de bits — Guía CorelDraw de Cero a Experto.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-image"></i> Lección 12 · Intermedio-avanzado</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Mapas de bits y PowerTRACE</h1>
+      <p class="lead js-anim-lead">CorelDRAW vive del vector, pero casi todos los proyectos reales mezclan fotos y logotipos escaneados. Aprende a importarlos, limpiarlos y —la joya— convertirlos a curvas editables con PowerTRACE.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+
+      <div class="section-head reveal">
+        <span class="kicker">12.1</span>
+        <h2>Mapa de bits vs. vector: cuándo usar cada uno</h2>
+        <p>Repaso exprés antes de mezclar: cada formato tiene su trabajo y su resolución.</p>
+      </div>
+
+      <table class="table-shortcuts reveal">
+        <thead><tr><th>Característica</th><th>Mapa de bits</th><th>Vector</th></tr></thead>
+        <tbody>
+          <tr><td>Definición</td><td>Cuadrícula de píxeles</td><td>Trazados matemáticos</td></tr>
+          <tr><td>Ampliar</td><td>Se pixeliza</td><td>Sin pérdida</td></tr>
+          <tr><td>Uso típico</td><td>Fotos, escaneos, texturas</td><td>Logotipos, carteles, ilustración</td></tr>
+          <tr><td>Resolución</td><td>Importa (ppp)</td><td>No importa</td></tr>
+          <tr><td>Edición</td><td>Por píxel (filtros, retoque)</td><td>Por nodo (forma, color)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        El error clásico del principiante es dibujar un logo en una imagen. Regla práctica: si puede
+        escalar a un cartel de 3 metros, debe ser vectorial.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">12.2</span>
+        <h2>Importar, redimensionar y recortar imágenes</h2>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-file-earmark-arrow-down"></i></div>
+            <h3>Importar</h3>
+            <p><kbd class="key">Ctrl</kbd>+<kbd class="key">I</kbd> abre el diálogo de importación. Puedes arrastrar a la página o importar directamente a un objeto (PowerClip, como viste en la lección 07).</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+            <h3>Redimensionar sin daño</h3>
+            <p>Usa el ancla y los manejadores, pero vigila el panel <em>Datos del objeto</em>: escalar una foto más del 20% nota en impresión. Mejor vuelve a importar la original más grande.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-crop"></i></div>
+            <h3>Recortar</h3>
+            <p>La herramienta Recortar (recuadro) elimina el área sobrante del mapa de bits. O haz un PowerClip y edítalo después sin destruir la imagen original.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-rulers"></i></div>
+            <h3>Re-muestrear</h3>
+            <p><em>Mapas de bits → Remuestrear</em> cambia tamaño y resolución de forma explícita (p. ej. 300 ppp para imprenta). Ideal para preparar la imagen antes de colocarla.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">12.3</span>
+        <h2>PowerTRACE: del píxel al vector</h2>
+        <p>La herramienta estrella para recuperar logotipos escaneados o bocetos en papel. Se activa con el mapa de bits seleccionado desde <em>Mapas de bits → Vectorizar mapa de bits</em> o el botón de la barra de propiedades.</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 168" role="img" aria-label="Flujo de vectorización con PowerTRACE de tres pasos" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="168" style="fill:var(--ink-soft)"/>
+            <text x="20" y="26" class="t-hl">Vectorización con PowerTRACE</text>
+            <rect x="30" y="44" width="130" height="92" rx="10" style="fill:var(--panel);stroke:var(--line)"/>
+            <circle cx="72" cy="78" r="16" style="fill:var(--cyan);opacity:.55"/>
+            <rect x="120" y="64" width="22" height="26" style="fill:var(--magenta);opacity:.55"/>
+            <circle cx="95" cy="108" r="12" style="fill:var(--yellow);opacity:.7"/>
+            <text x="95" y="152" text-anchor="middle" class="t-sm">1 · Mapa de bits</text>
+            <path d="M168,90 L196,90" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <path d="M191,83 L203,90 L191,97" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <rect x="205" y="44" width="300" height="92" rx="10" style="fill:var(--panel);stroke:var(--line)"/>
+            <text x="355" y="72" text-anchor="middle" class="t-label">Opciones de PowerTRACE</text>
+            <text x="355" y="94" text-anchor="middle" class="t-sm">rápida · por contorno · por línea centrada</text>
+            <text x="355" y="112" text-anchor="middle" class="t-sm">detalle · suavizado · suavizado de esquinas</text>
+            <text x="355" y="130" text-anchor="middle" class="t-sm">modo IA: ilustración / fotorrealista</text>
+            <path d="M513,90 L541,90" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <path d="M536,83 L548,90 L536,97" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <rect x="550" y="44" width="140" height="92" rx="10" style="fill:var(--panel);stroke:var(--line)"/>
+            <path d="M575,108 L595,108 L585,66 Z" style="fill:var(--cyan);opacity:.7"/>
+            <path d="M610,72 L640,72 L625,116 Z" style="fill:var(--magenta);opacity:.6"/>
+            <text x="620" y="152" text-anchor="middle" class="t-sm">3 · Vector editable</text>
+          </g>
+        </svg>
+        <div class="fig-caption">De <b>mapa de bits a vector</b> en tres pasos: eliges el método, ajustas parámetros y conviertes el trazado en curvas editables.</div>
+      </div>
+
+      <h3 class="reveal mt-4" style="font-size:1.05rem;color:var(--cyan);">Los tres métodos de vectorización</h3>
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-lightning"></i></div>
+            <h3>Vectorización rápida</h3>
+            <p>Un clic y listo. Resultado aceptable para bocetos o siluetas simples: el más rápido para empezar.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-bezier2"></i></div>
+            <h3>Por contorno</h3>
+            <p>Interpreta las áreas de color como formas cerradas rellenas. El favorito para logotipos con bloques planos.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-pen"></i></div>
+            <h3>Por línea centrada</h3>
+            <p>Traza líneas en el centro de los trazos: pensado para firmas, dibujos a línea y caligrafía.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        Tres ajustes mandan: <strong>Detalle</strong> (fidelidad de formas), <strong>Suavizado</strong> (elimina
+        irregularidades) y <strong>Suavizado de esquinas</strong> (redondea picos). Para fotos, los modos de
+        <em>upsampling con IA</em> (Ilustración o Fotorrealista) mejoran la calidad antes de vectorizar.
+        Después, borra el fondo original y revisa el <em>Gestor de objetos</em>: cada color llegará como un
+        grupo de curvas separado.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">12.4</span>
+        <h2>Filtros y efectos de mapa de bits</h2>
+        <p>El menú <em>Mapas de bits</em> agrupa filtros de ajuste (brillo, contraste, tono/saturación) y efectos artísticos. Se aplican por pasos y muchos pueden apilarse.</p>
+      </div>
+
+      <div class="callout warn reveal">
+        <span class="label"><i class="bi bi-exclamation-triangle"></i> Ojo</span>
+        Todo filtro convierte la selección en una imagen rasterizada: se pierde la edición vectorial de esa
+        zona. Aplica filtros en el <em>último paso</em> del flujo o mantén una copia vectorial de respaldo.
+      </div>
+
+      <div class="exercise reveal">
+        <h4><i class="bi bi-pencil-square"></i> Ejercicio 12.1</h4>
+        <p class="text-dim mb-0">Busca una foto nítida de un logotipo (o escanea un boceto a tinta). Vectorízalo con "Por contorno" y reduce el detalle para quitar el ruido del papel. Separa los colores en grupos y rellena cada forma con la paleta de tu marca. Exporta el resultado como SVG y como PNG transparente a 300 ppp.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container-narrow">
+      <div class="lesson-pager reveal">
+        
+        <a class="pager-link prev" href="11-plan-estudio-certificacion.html">
+          <span class="dir"><i class="bi bi-arrow-left"></i> Anterior</span>
+          <strong>11 · Plan de estudio y certificación</strong>
+        </a>
+        
+        <a class="pager-link next" href="13-guias-cuadriculas-precision.html">
+          <span class="dir">Siguiente <i class="bi bi-arrow-right"></i></span>
+          <strong>13 · Guías, cuadrículas y medidas</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../../assets/js/three-bg.js"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
+</body>
+</html>

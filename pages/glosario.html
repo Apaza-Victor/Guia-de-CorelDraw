@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -189,6 +190,120 @@
             <p>Conversión de texto o formas a trazados editables ("Convertir en curvas") para deformarlos libremente.</p>
           </div>
         </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Kerning</em></h3>
+            <p>Ajuste del espacio entre pares de letras concretos (AV, To) para una legibilidad óptima.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Interletraje (tracking)</em></h3>
+            <p>Espacio uniforme aplicado a un rango completo de texto, no a pares concretos.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Línea base</em></h3>
+            <p>Línea imaginaria sobre la que "se asientan" las letras de una fuente.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Altura x</em></h3>
+            <p>Altura de las minúsculas sin ascendentes; define la percepción del tamaño de una fuente.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Ascendente / descendente</em></h3>
+            <p>Porciones de las letras que sobresalen por encima de la altura x o por debajo de la línea base.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Texto artístico</em></h3>
+            <p>Texto que se comporta como objeto vectorial (titulares, logotipos); admite efectos y ajuste a trazado.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Texto de párrafo</em></h3>
+            <p>Texto dentro de un marco, con salto de línea automático, columnas y enlaces entre marcos.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Enlazar marcos</em></h3>
+            <p>Conexión de marcos de texto para que el contenido fluya de uno a otro automáticamente.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Símbolo</em></h3>
+            <p>Objeto maestro cuyas instancias se actualizan en todo el documento al editar el original.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Convertir en curvas</em></h3>
+            <p>Transformar texto o formas en trazados editables (<kbd class="key">Ctrl</kbd>+<kbd class="key">Q</kbd>); se pierde la edición tipográfica.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Vectorizar / trazar</em></h3>
+            <p>Convertir un mapa de bits en vector (PowerTRACE), por contorno o por línea centrada.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>PDF/X</em></h3>
+            <p>Estándar de PDF para intercambio de archivos de impresión: incrusta fuentes y define color y sangrado.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Sobreimpresión</em></h3>
+            <p>Impresión de una tinta encima de otra en la misma zona; se usa para evitar rebordes en textos finos.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Marcas de corte / registro</em></h3>
+            <p>Señales de impresión para guillotinar y alinear las placas de color al imprimir en offset.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Troquel</em></h3>
+            <p>Molde de corte con formas especiales (redondeados, ventanas) aplicado sobre papel o cartón.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Contraforma / hueco</em></h3>
+            <p>Espacio negativo interior de una letra o símbolo, como el interior de la "O" o de la "A".</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Espacio negativo</em></h3>
+            <p>El vacío que rodea a los elementos y que, bien usado, forma parte del propio diseño.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Resolución</em></h3>
+            <p>Densidad de píxeles de un mapa de bits, medida en ppp: 300 ppp para imprenta, 72–150 ppp para web.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 reveal">
+          <div class="card-vec">
+            <h3 style="font-size:1.05rem;"><em>Capa</em></h3>
+            <p>Nivel organizativo del Gestor de objetos que agrupa y ordena objetos dentro de una página.</p>
+          </div>
+        </div>
       </div>
 
       <div class="callout tip reveal mt-4">
@@ -222,7 +337,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../assets/js/three-bg.js"></script>
-<script src="../assets/js/site.js?v=8"></script>
-<script src="../assets/js/motion.js?v=8"></script>
+<script src="../assets/js/site.js?v=14"></script>
+<script src="../assets/js/motion.js?v=14"></script>
 </body>
 </html>

@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -149,6 +150,43 @@
         del contenedor.
       </div>
 
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 250" role="img" aria-label="PowerClip: imagen insertada dentro de una letra" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="clipLetra">
+              <text x="70" y="172" font-size="150" font-weight="700" style="font-family:var(--f-display)">A</text>
+            </clipPath>
+          </defs>
+          <g>
+            <rect x="0" y="0" width="720" height="250" style="fill:var(--ink-soft)"/>
+            <text x="24" y="32" class="t-hl">PowerClip · imagen dentro de una forma</text>
+            <rect x="50" y="58" width="160" height="160" style="fill:none;stroke:var(--line);stroke-dasharray:6 4"/>
+            <g clip-path="url(#clipLetra)">
+              <rect x="50" y="58" width="160" height="50" style="fill:var(--cyan);opacity:.9"/>
+              <rect x="50" y="108" width="160" height="55" style="fill:var(--magenta);opacity:.85"/>
+              <rect x="50" y="163" width="160" height="55" style="fill:var(--yellow);opacity:.9"/>
+              <circle cx="125" cy="86" r="20" style="fill:var(--key);opacity:.95"/>
+            </g>
+            <text x="130" y="238" text-anchor="middle" class="t-sm">contenedor · la letra recortada</text>
+            <path d="M220,138 L310,138" style="stroke:var(--text-dim);stroke-width:2"/>
+            <path d="M300,131 L312,138 L300,145" style="fill:none;stroke:var(--text-dim);stroke-width:2"/>
+            <text x="265" y="128" text-anchor="middle" class="t-sm">PowerClip</text>
+            <rect x="330" y="58" width="200" height="160" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="336" y="64" width="188" height="46" style="fill:var(--cyan);opacity:.9"/>
+            <rect x="336" y="110" width="188" height="50" style="fill:var(--magenta);opacity:.85"/>
+            <rect x="336" y="160" width="188" height="52" style="fill:var(--yellow);opacity:.9"/>
+            <circle cx="430" cy="88" r="18" style="fill:var(--key);opacity:.95"/>
+            <text x="430" y="238" text-anchor="middle" class="t-sm">contenido · la imagen o vector original</text>
+            <rect x="556" y="58" width="150" height="160" rx="8" style="fill:var(--panel);stroke:var(--line)"/>
+            <text x="631" y="110" text-anchor="middle" class="t-label">Resultado</text>
+            <text x="631" y="132" text-anchor="middle" class="t-sm">la foto queda</text>
+            <text x="631" y="148" text-anchor="middle" class="t-sm">recortada dentro</text>
+            <text x="631" y="164" text-anchor="middle" class="t-sm">de la silueta</text>
+          </g>
+        </svg>
+        <div class="fig-caption"><b>PowerClip</b> — el objeto superior actúa de contenedor/máscara y el contenido se ajusta a su silueta sin recortarse de forma destructiva. Ideal para fotos dentro de letras o logotipos.</div>
+      </div>
+
       <div class="section-head reveal mt-5">
         <span class="kicker">7.2</span>
         <h2>Lente</h2>
@@ -158,6 +196,42 @@
       <div class="exercise reveal">
         <h4><i class="bi bi-pencil-square"></i> Ejercicio 7.1</h4>
         <p class="text-dim mb-0">Escribe una palabra corta en texto artístico grande y grueso. Conviértela a curvas (<kbd class="key">Ctrl</kbd>+<kbd class="key">Q</kbd>) y usa PowerClip para insertar una textura o fotografía dentro de las letras. Añade después una sombra paralela suave para dar profundidad al conjunto.</p>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">7.3</span>
+        <h2>Combinar efectos y convertirlos en mapa de bits</h2>
+        <p>Los efectos no destructivos pueden apilarse en cadena (una mezcla con sombra, una extrusión con contorno), pero llega un punto en que conviene rasterizar el resultado para exportar o imprimir con control total.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-layers-half"></i></div>
+            <h3>Apilar efectos</h3>
+            <p>Aplica la mezcla o contorno primero y luego la sombra al conjunto: el orden cambia el resultado. Revisa cada efecto en el Gestor de objetos para deshacerlo individualmente.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+            <h3>Convertir en mapa de bits</h3>
+            <p><kbd class="key">Mapas de bits</kbd> → Convertir en mapa de bits. Elige 300 ppp para imprenta. El efecto queda "congelado" en píxeles: se pierde la edición vectorial.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-speedometer2"></i></div>
+            <h3>Rendimiento</h3>
+            <p>Las extrusiones, mezclas con muchos pasos y lentes aumentan el peso del archivo y el tiempo de repintado. Rasteriza los efectos complejos antes de continuar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn reveal">
+        <span class="label"><i class="bi bi-exclamation-triangle"></i> Cuidado</span>
+        Antes de rasterizar, guarda una copia con los efectos intactos. Un mapa de bits no se puede
+        "des-rasterizar", y suele ocupar bastante más espacio que el vector original.
       </div>
 
     </div>
@@ -204,7 +278,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>

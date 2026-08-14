@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>13 · Guías, cuadrículas y medidas · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Reglas, guías dinámicas, cuadrícula, ajustes y herramientas de medición para trazados exactos — Guía CorelDraw de Cero a Experto.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-rulers"></i> Lección 13 · Intermedio</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Guías, cuadrículas y medidas</h1>
+      <p class="lead js-anim-lead">El ojo miente. Para que un cartel quede perfecto, la rejilla invisible que organiza el documento importa más que el pulso. Esta lección convierte tu "aproximadamente" en "exacto".</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+
+      <div class="section-head reveal">
+        <span class="kicker">13.1</span>
+        <h2>Reglas y unidades</h2>
+        <p>Las reglas superior e izquierda muestran la posición del cursor. Cambia la unidad en <kbd class="key">Ctrl</kbd>+<kbd class="key">J</kbd> → Documento → Reglas: milímetros para imprenta, píxeles para pantalla, puntos para tipografía.</p>
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Doble clic en una regla abre su configuración. Mantener <kbd class="key">Shift</kbd> mientras arrastras
+        desde la regla deja el origen (0,0) en el punto que prefieras.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">13.2</span>
+        <h2>Guías y guías dinámicas</h2>
+        <p>Arrastra desde la regla para crear guías horizontales y verticales. Las <em>guías dinámicas</em> aparecen al volar sobre otros objetos y muestran los puntos de alineación (centro, bordes, ángulos de 45°).</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 190" role="img" aria-label="Guías, cuadrícula y ajuste magnético" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="190" style="fill:var(--ink-soft)"/>
+            <text x="20" y="26" class="t-hl">Precisión: guías y cuadrícula</text>
+            <rect x="40" y="46" width="300" height="120" style="fill:none;stroke:var(--text-faint);stroke-width:1" stroke-dasharray="4 4"/>
+            <rect x="250" y="86" width="60" height="46" style="fill:var(--cyan);opacity:.75"/>
+            <rect x="316" y="86" width="24" height="46" style="fill:var(--magenta);opacity:.75"/>
+            <line x1="250" y1="108" x2="340" y2="108" style="stroke:var(--yellow);stroke-width:1.4;stroke-dasharray:2 2"/>
+            <text x="250" y="110" text-anchor="middle" style="fill:#111;font-size:10px;font-weight:700">ajustar</text>
+            <line x1="190" y1="46" x2="190" y2="166" style="stroke:var(--cyan);stroke-width:1.6" stroke-dasharray="6 4"/>
+            <line x1="60" y1="150" x2="340" y2="150" style="stroke:var(--magenta);stroke-width:1.6" stroke-dasharray="6 4"/>
+            <text x="190" y="182" text-anchor="middle" class="t-sm">guía vertical (x = 150 mm)</text>
+            <text x="200" y="40" text-anchor="start" class="t-sm">guía horizontal (y = 140 mm)</text>
+            <text x="355" y="70" text-anchor="start" class="t-sm">guía dinámica: se</text>
+            <text x="355" y="88" text-anchor="start" class="t-sm">ilumina al pasar</text>
+            <text x="355" y="106" text-anchor="start" class="t-sm">sobre bordes y</text>
+            <text x="355" y="124" text-anchor="start" class="t-sm">centros de objetos</text>
+            <circle cx="340" cy="108" r="5" style="fill:var(--yellow);stroke:var(--panel);stroke-width:2"/>
+            <text x="470" y="106" text-anchor="start" class="t-sm">· cuadrícula (punto azul)</text>
+            <text x="470" y="124" text-anchor="start" class="t-sm">· ajuste magnético (punto ámbar)</text>
+          </g>
+        </svg>
+        <div class="fig-caption">Guías y cuadrícula son el "andamio" invisible del documento; el <b>ajuste</b> hace que los objetos "magnetizen" a ellos.</div>
+      </div>
+
+      <h3 class="reveal mt-4" style="font-size:1.05rem;color:var(--cyan);">Guías dinámicas y edición de guías</h3>
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-magnet"></i></div>
+            <h3>Tipos de guías</h3>
+            <p>Además de horizontales y verticales, crea guías inclinadas y curvas con la herramienta Guías (caja de herramientas), o desde la regla con clic derecho → Guía.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-pin-angle"></i></div>
+            <h3>Editar y fijar</h3>
+            <p>Selecciona una guía con la herramienta Selección o Forma para moverla, rotarla o eliminarla con <kbd class="key">Supr</kbd>. Actívalas o bloquéalas desde <em>Ver → Guías</em>.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-eye-slash"></i></div>
+            <h3>Ocultar al imprimir</h3>
+            <p>Las guías y la cuadrícula nunca se imprimen ni se exportan: son solo ayudas de trabajo. Para ocultarlas al volar por el diseño, <kbd class="key">Ctrl</kbd>+<kbd class="key">J</kbd> → Ver.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">13.3</span>
+        <h2>Cuadrícula y ajustes magnéticos</h2>
+        <p>La cuadrícula ofrece una referencia visual constante. Los modos de ajuste (guías, cuadrícula, objetos, página) hacen que el cursor "salte" a puntos clave: la base de toda alineación rápida.</p>
+      </div>
+
+      <table class="table-shortcuts reveal">
+        <thead><tr><th>Acción</th><th>Cómo hacerla</th></tr></thead>
+        <tbody>
+          <tr><td>Mostrar/ocultar cuadrícula</td><td><em>Ver → Cuadrícula</em></td></tr>
+          <tr><td>Ajustar a cuadrícula</td><td><kbd class="key">Ctrl</kbd>+<kbd class="key">Y</kbd> (alterna)</td></tr>
+          <tr><td>Ajustar a guías</td><td><kbd class="key">Alt</kbd>+<kbd class="key">Z</kbd> en muchas versiones; o <em>Ver → Ajustar a</em></td></tr>
+          <tr><td>Ajustar a objetos</td><td><em>Ver → Ajustar a → Objetos</em></td></tr>
+          <tr><td>Configurar cuadrícula</td><td><kbd class="key">Ctrl</kbd>+<kbd class="key">J</kbd> → Documento → Cuadrícula</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">13.4</span>
+        <h2>Acotar: la herramienta de medidas</h2>
+        <p>Para planos, packaging o dibujo técnico, la caja de herramientas incluye herramientas de <em>cota</em>: miden la distancia real entre dos puntos y se actualizan si mueves los objetos.</p>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        La <em>herramienta Cota automática</em> mide con un arrastre y deja la cifra sobre la línea. Asigna
+        una cota a una capa aparte: así ocultas toda la acotación de un vistazo y la imprimes solo cuando toca.
+      </div>
+
+      <div class="exercise reveal">
+        <h4><i class="bi bi-pencil-square"></i> Ejercicio 13.1</h4>
+        <p class="text-dim mb-0">Dibuja una tarjeta de 85 × 55 mm. Crea guías a 10 mm de cada borde (la zona de seguridad) y una cuadrícula de 5 mm. Coloca dentro cuatro rectángulos de 15 × 15 mm alineados a guías y centros, sin tocar el mouse "a ojo": usa solo ajustes y guías. Acota el ancho total con la herramienta Cota.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container-narrow">
+      <div class="lesson-pager reveal">
+        
+        <a class="pager-link prev" href="12-mapas-de-bits-y-powertrace.html">
+          <span class="dir"><i class="bi bi-arrow-left"></i> Anterior</span>
+          <strong>12 · Mapas de bits y PowerTRACE</strong>
+        </a>
+        
+        <a class="pager-link next" href="14-documentos-multipagina-plantillas.html">
+          <span class="dir">Siguiente <i class="bi bi-arrow-right"></i></span>
+          <strong>14 · Documentos multipágina y plantillas</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../../assets/js/three-bg.js"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
+</body>
+</html>

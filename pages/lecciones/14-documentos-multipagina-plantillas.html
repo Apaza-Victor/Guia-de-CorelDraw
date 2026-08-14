@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>14 · Documentos multipágina y plantillas · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Páginas, capas maestras, numeración y plantillas (.cdt) para documentos largos — Guía CorelDraw de Cero a Experto.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-files"></i> Lección 14 · Intermedio</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Documentos multipágina y plantillas</h1>
+      <p class="lead js-anim-lead">Catálogos, folletos y revistas rara vez caben en una página. Aprende a orquestar muchas páginas con elementos comunes (numeración, logotipo, pie) sin repetir trabajo.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+
+      <div class="section-head reveal">
+        <span class="kicker">14.1</span>
+        <h2>Gestionar páginas</h2>
+        <p>En la parte inferior de la ventana está el navegador de páginas: añade, elimina, duplica y reordena desde <em>Diseño → Insertar página</em> o haciendo clic en el signo +.</p>
+      </div>
+
+      <table class="table-shortcuts reveal">
+        <thead><tr><th>Acción</th><th>Cómo hacerla</th></tr></thead>
+        <tbody>
+          <tr><td>Insertar página</td><td><em>Diseño → Insertar página</em> o botón + del navegador</td></tr>
+          <tr><td>Cambiar tamaño/orientación</td><td><em>Diseño → Configuración de página</em> (aplica a la actual o a todas)</td></tr>
+          <tr><td>Duplicar una página</td><td>Clic derecho en la pestaña → Duplicar página</td></tr>
+          <tr><td>Reordenar</td><td>Arrastra las pestañas del navegador</td></tr>
+          <tr><td>Renombrar</td><td>Clic derecho → Renombrar página</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Cada página puede tener su propio tamaño y orientación: útil para piezas mixtas (una portada
+        vertical + desplegables horizontales) en un mismo archivo.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">14.2</span>
+        <h2>Capas de página maestra</h2>
+        <p>En el <em>Gestor de objetos</em>, el área superior con el icono de una hoja es la <strong>página maestra</strong>: lo que dibujes ahí aparece en todas las páginas. Es el hogar del logotipo, el pie, la cabecera y el número de página.</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 176" role="img" aria-label="Página maestra aplicada a varias páginas" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="176" style="fill:var(--ink-soft)"/>
+            <text x="20" y="26" class="t-hl">Capa maestra = contenido en todas las páginas</text>
+            <rect x="36" y="46" width="150" height="110" rx="6" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="50" y="58" width="40" height="12" rx="3" style="fill:var(--cyan);opacity:.85"/>
+            <rect x="50" y="136" width="122" height="8" rx="2" style="fill:var(--magenta);opacity:.7"/>
+            <text x="111" y="126" text-anchor="middle" class="t-sm">— 01 —</text>
+            <rect x="200" y="46" width="150" height="110" rx="6" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="214" y="58" width="40" height="12" rx="3" style="fill:var(--cyan);opacity:.85"/>
+            <rect x="214" y="136" width="122" height="8" rx="2" style="fill:var(--magenta);opacity:.7"/>
+            <text x="275" y="126" text-anchor="middle" class="t-sm">— 02 —</text>
+            <rect x="364" y="46" width="150" height="110" rx="6" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="378" y="58" width="40" height="12" rx="3" style="fill:var(--cyan);opacity:.85"/>
+            <rect x="378" y="136" width="122" height="8" rx="2" style="fill:var(--magenta);opacity:.7"/>
+            <text x="439" y="126" text-anchor="middle" class="t-sm">— 03 —</text>
+            <rect x="528" y="46" width="160" height="110" rx="8" style="fill:var(--panel-2);stroke:var(--cyan);stroke-width:1.4"/>
+            <text x="608" y="80" text-anchor="middle" class="t-label">Capa maestra</text>
+            <rect x="548" y="94" width="44" height="10" rx="2" style="fill:var(--cyan);opacity:.85"/>
+            <rect x="548" y="112" width="120" height="8" rx="2" style="fill:var(--magenta);opacity:.7"/>
+            <text x="608" y="140" text-anchor="middle" class="t-sm">cabecera · pie · número</text>
+          </g>
+        </svg>
+        <div class="fig-caption">Un elemento colocado en la <b>capa maestra</b> (derecha) se repite automáticamente en las páginas 1, 2, 3… sin copiarlo a mano.</div>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        Para numeración automática usa <em>Diseño → Añadir número de página</em> dentro de la capa maestra:
+        CorelDRAW numera cada página por ti y actualiza el total si añades o quitas hojas.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">14.3</span>
+        <h2>Plantillas: tu arranque de cada proyecto</h2>
+        <p>Una plantilla (<em>.cdt</em>) guarda páginas, capas, guías, estilos y textos de relleno. Crea una vez el marco de tus piezas habituales (tarjetas, flyers, catálogos) y empieza cada encargo sin reconfigurar nada.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-file-earmark-plus"></i></div>
+            <h3>Guardar como plantilla</h3>
+            <p><em>Archivo → Guardar como plantilla</em> (o Guardar como → tipo .cdt). Incluye las capas de la página maestra, así todo documento nuevo hereda cabecera, pie y guías.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-folder2-open"></i></div>
+            <h3>Abrir una plantilla</h3>
+            <p><em>Archivo → Nuevo desde plantilla</em> abre el buscador de plantillas instaladas y las tuyas propias. Al crear un documento desde plantilla, siempre partes de un marco listo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn reveal">
+        <span class="label"><i class="bi bi-exclamation-triangle"></i> Ojo</span>
+        No confundas "Guardar como plantilla" con "Guardar como": la plantilla es un archivo aparte con
+        extensión .cdt y no sobrescribe tu diseño en curso.
+      </div>
+
+      <div class="exercise reveal">
+        <h4><i class="bi bi-pencil-square"></i> Ejercicio 14.1</h4>
+        <p class="text-dim mb-0">Crea un documento de 4 páginas A5. En la capa maestra coloca el logotipo arriba a la izquierda, un pie de página y la numeración automática. Añade después dos páginas más y comprueba que la numeración se actualiza sola. Guarda el archivo como plantilla ".cdt".</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container-narrow">
+      <div class="lesson-pager reveal">
+        
+        <a class="pager-link prev" href="13-guias-cuadriculas-precision.html">
+          <span class="dir"><i class="bi bi-arrow-left"></i> Anterior</span>
+          <strong>13 · Guías, cuadrículas y medidas</strong>
+        </a>
+        
+        <a class="pager-link next" href="15-texto-avanzado-estilos-flujo-tablas.html">
+          <span class="dir">Siguiente <i class="bi bi-arrow-right"></i></span>
+          <strong>15 · Texto avanzado: estilos y tablas</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../../assets/js/three-bg.js"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
+</body>
+</html>

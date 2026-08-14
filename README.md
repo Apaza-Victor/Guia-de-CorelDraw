@@ -6,7 +6,7 @@
 
 ## ✨ Características
 
-- **20 páginas completas**: portada + 11 módulos/lecciones + páginas de apoyo (qué es CorelDraw, cómo usar la guía, método, recursos, glosario, comandos, herramientas).
+- **30 páginas completas**: portada + 19 módulos/lecciones + páginas de apoyo (qué es CorelDraw, cómo usar la guía, método, recursos, glosario, comandos, herramientas, preguntas frecuentes, checklist de prepress).
 - **Tema claro / oscuro** con memoria (se guarda en el navegador).
 - **Buscador integrado** con acceso directo por teclado (`/`).
 - **Diseño responsive** de 360px hasta pantallas 4K.
@@ -25,7 +25,7 @@
 Guia de CorelDraw/
 ├── index.html                     → Portada (hero 3D + explora la guía)
 ├── pages/
-│   ├── modulos.html               → Los 11 módulos del programa
+│   ├── modulos.html               → Los 19 módulos del programa
 │   ├── como-usar.html             → Cómo usar la guía
 │   ├── que-es.html                → ¿Qué es CorelDraw?
 │   ├── metodo.html                → Método de estudio
@@ -33,6 +33,8 @@ Guia de CorelDraw/
 │   ├── glosario.html              → Glosario de términos
 │   ├── comandos.html              → Comandos y atajos
 │   ├── herramientas.html          → Herramientas de CorelDRAW
+│   ├── preguntas-frecuentes.html  → FAQ para principiantes
+│   ├── checklist-preflight.html   → Checklist interactiva de prepress
 │   └── lecciones/
 │       ├── 01-introduccion-y-entorno.html
 │       ├── 02-seleccion-formas-transformacion.html
@@ -44,7 +46,15 @@ Guia de CorelDraw/
 │       ├── 08-exportacion-impresion.html
 │       ├── 09-atajos-productividad.html
 │       ├── 10-proyectos-practicos.html
-│       └── 11-plan-estudio-certificacion.html
+│       ├── 11-plan-estudio-certificacion.html
+│       ├── 12-mapas-de-bits-y-powertrace.html
+│       ├── 13-guias-cuadriculas-precision.html
+│       ├── 14-documentos-multipagina-plantillas.html
+│       ├── 15-texto-avanzado-estilos-flujo-tablas.html
+│       ├── 16-gestor-de-objetos-simbolos-avanzados.html
+│       ├── 17-intercambio-de-formatos.html
+│       ├── 18-corel-photo-paint-edicion-fotos.html
+│       └── 19-medios-artisticos-dibujo.html
 └── assets/
     ├── css/  (style.css, responsive.css)
     └── js/   (site.js, motion.js, three-bg.js, babylon-hero.js, anime.min.js)

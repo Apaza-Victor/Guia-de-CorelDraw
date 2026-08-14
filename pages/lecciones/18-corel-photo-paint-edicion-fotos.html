@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>18 · Corel PHOTO-PAINT y edición de fotos · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Retoque, selección, máscaras y ajustes de color en Corel PHOTO-PAINT; integración con CorelDRAW — Guía CorelDraw de Cero a Experto.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-image"></i> Lección 18 · Intermedio</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Corel PHOTO-PAINT y edición de fotos</h1>
+      <p class="lead js-anim-lead">CorelDRAW dibuja; Corel PHOTO-PAINT retoca. Vienen en el mismo paquete y se llevan bien: esta lección te da el flujo fotográfico que completa tus piezas — sin saltar a otro software.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+
+      <div class="section-head reveal">
+        <span class="kicker">18.1</span>
+        <h2>De CorelDRAW a PHOTO-PAINT y de vuelta</h2>
+        <p>La integración es el superpoder del par: haz doble clic en un mapa de bits dentro de CorelDRAW y se abre en PHOTO-PAINT para editarlo; al guardar, el cambio vuelve a tu diseño. También puedes exportar objetos como imágenes en alta resolución.</p>
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Si el mapa de bits está <em>enlazado</em>, PHOTO-PAINT edita el archivo original y la imagen se
+        actualiza en todos los documentos que la usan. Con <em>incrustado</em>, el cambio queda dentro
+        de tu .cdr.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">18.2</span>
+        <h2>Selección y máscaras</h2>
+        <p>En PHOTO-PAINT, la selección es la puerta: lo que marcas es lo que tocas. La <strong>máscara</strong> es una selección con canal y plumilla, el equivalente no destructivo de recortar a mano.</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 168" role="img" aria-label="Máscara que aísla el fondo de un producto" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="168" style="fill:var(--ink-soft)"/>
+            <text x="20" y="26" class="t-hl">Máscara: selección no destructiva</text>
+            <rect x="40" y="46" width="180" height="96" rx="8" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="56" y="62" width="148" height="64" rx="4" style="fill:var(--cyan);opacity:.25"/>
+            <rect x="72" y="78" width="116" height="32" rx="6" style="fill:var(--cyan);opacity:.85"/>
+            <text x="130" y="99" text-anchor="middle" style="fill:#fff;font-size:10px;font-weight:700">PRODUCTO</text>
+            <text x="130" y="158" text-anchor="middle" class="t-sm">imagen original</text>
+            <path d="M230,96 L252,96" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <path d="M248,89 L260,96 L248,103" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <rect x="268" y="46" width="180" height="96" rx="8" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="284" y="62" width="148" height="64" rx="4" style="fill:var(--cyan);opacity:.25"/>
+            <rect x="300" y="78" width="116" height="32" rx="6" style="fill:var(--cyan);opacity:.85"/>
+            <path d="M300,78 L416,78 L416,110 L300,110 Z" style="fill:none;stroke:var(--magenta);stroke-width:1.6" stroke-dasharray="5 4"/>
+            <text x="358" y="158" text-anchor="middle" class="t-sm">máscara activa</text>
+            <path d="M458,96 L480,96" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <path d="M476,89 L488,96 L476,103" style="stroke:var(--text-faint);stroke-width:1.6;fill:none"/>
+            <rect x="496" y="46" width="180" height="96" rx="8" style="fill:var(--panel);stroke:var(--line)"/>
+            <rect x="512" y="62" width="148" height="64" rx="4" style="fill:var(--panel-2);stroke:var(--line)"/>
+            <rect x="528" y="78" width="116" height="32" rx="6" style="fill:var(--cyan);opacity:.85"/>
+            <text x="586" y="99" text-anchor="middle" style="fill:#fff;font-size:10px;font-weight:700">PRODUCTO</text>
+            <text x="586" y="158" text-anchor="middle" class="t-sm">fondo extraído</text>
+          </g>
+        </svg>
+        <div class="fig-caption">Con la máscara, el fondo queda aislado pero intacto: puedes reemplazarlo, difuminar el borde o extraer el producto sin dañar el original.</div>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        Para recortar por color, usa la <em>varita mágica</em> o el <em>reemplazo de color</em>; para
+        cabellos y bordes finos, la herramienta <em>Recorte por trazado</em>. Guarda la selección como
+        canal para reutilizarla sin volver a marcar.
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">18.3</span>
+        <h2>Ajustes de color y retoque</h2>
+        <p>El menú <em>Ajustar</em> concentra curvas, niveles, tono/saturación y corrección selectiva. Los pinceles de retoque (clonar, reparar, espolvorear) limpian manchas, cables y polvo de las fotos de producto.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-sliders"></i></div>
+            <h3>Curvas y niveles</h3>
+            <p>Sube contraste con una "S" suave en curvas o ajusta negros/blancos con niveles. Los avisos de recorte (clip) te muestran si quemas luces o sombras.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-eraser"></i></div>
+            <h3>Clonar y reparar</h3>
+            <p>La herramienta clonar pinta copiando textura de otra zona; reparar mezcla automáticamente. Ideales para quitar manchas sin dejar costuras visibles.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-bounding-box-circles"></i></div>
+            <h3>Enfoque y ruido</h3>
+            <p>Aplica nitidez a bordes con "Enfocar" y reduce el grano de fotos subexpuestas con el filtro de reducción de ruido. Siempre en copia o en capa para no perder el original.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise reveal">
+        <h4><i class="bi bi-pencil-square"></i> Ejercicio 18.1</h4>
+        <p class="text-dim mb-0">Abre una foto de producto en PHOTO-PAINT. Recórtala con máscara para aislar el fondo, corrige el balance de blancos con niveles y limpia dos imperfecciones con el clonador. Guarda el resultado como PNG con transparencia e incrústalo en un diseño de CorelDRAW.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container-narrow">
+      <div class="lesson-pager reveal">
+        
+        <a class="pager-link prev" href="17-intercambio-de-formatos.html">
+          <span class="dir"><i class="bi bi-arrow-left"></i> Anterior</span>
+          <strong>17 · Intercambio de formatos</strong>
+        </a>
+        
+        <a class="pager-link next" href="19-medios-artisticos-dibujo.html">
+          <span class="dir">Siguiente <i class="bi bi-arrow-right"></i></span>
+          <strong>19 · Medios artísticos y dibujo a mano alzada</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../../assets/js/three-bg.js"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
+</body>
+</html>

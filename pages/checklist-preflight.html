@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Checklist de prepress · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Lista de verificación para entregar archivos de CorelDRAW listos para imprenta: CMYK, sangrado, curvas, PDF/X y preflight.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../assets/css/responsive.css?v=14">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <a class="h-link" href="../index.html">Inicio</a>      <a class="h-link" href="modulos.html">Módulos</a>
+      <a class="h-link" href="recursos.html">Recursos</a>
+      <a class="h-link" href="glosario.html">Glosario</a>
+      <a class="h-link" href="comandos.html">Comandos</a>
+      <a class="h-link" href="herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-check2-square"></i> Antes de enviar a imprimir</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Checklist de prepress</h1>
+      <p class="lead js-anim-lead">Veinte comprobaciones en cuatro bloques para que tu archivo llegue a la imprenta sin sorpresas. Marca cada punto y el avance se guarda en tu navegador.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+
+      <div class="progress reveal" style="height:10px;background:var(--line);">
+        <div class="progress-bar" id="preflightBar" style="width:0%;transition:width .3s ease;"></div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-2 mb-4">
+        <p class="mb-0 text-dim" style="font-size:.9rem;">Avance: <strong id="preflightPct" style="color:var(--key);">0 de 20</strong></p>
+        <button type="button" class="btn btn-vec btn-vec-ghost btn-sm" id="preflightReset"><i class="bi bi-arrow-counterclockwise me-1"></i>Reiniciar checklist</button>
+      </div>
+
+      <div class="section-head reveal">
+        <span class="kicker">Bloque A</span>
+        <h2>Documento y color</h2>
+      </div>
+
+      <div class="chk-list reveal">
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc1" data-check="1">
+          <label class="form-check-label" for="pc1">Tamaño de página correcto (A4, A3 o medida final en mm)</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc2" data-check="2">
+          <label class="form-check-label" for="pc2">Modo de color <strong>CMYK</strong>, no RGB</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc3" data-check="3">
+          <label class="form-check-label" for="pc3">Mapas de bits a <strong>300 ppp</strong></label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc4" data-check="4">
+          <label class="form-check-label" for="pc4">Unidades de medida definidas (mm o pulgadas)</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc5" data-check="5">
+          <label class="form-check-label" for="pc5">Sangrado (<em>bleed</em>) de <strong>2–3 mm</strong> extendido en el archivo</label>
+        </div>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">Bloque B</span>
+        <h2>Diseño</h2>
+      </div>
+
+      <div class="chk-list reveal">
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc6" data-check="6">
+          <label class="form-check-label" for="pc6">Los objetos que tocan el borde se extienden hasta el sangrado</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc7" data-check="7">
+          <label class="form-check-label" for="pc7">Texto e imágenes importantes dentro de la zona de seguridad</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc8" data-check="8">
+          <label class="form-check-label" for="pc8">Textos finos en <strong>negro 100%</strong>; negro enriquecido solo en grandes áreas</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc9" data-check="9">
+          <label class="form-check-label" for="pc9">Sin colores RGB "flotantes": todo en la paleta del documento</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc10" data-check="10">
+          <label class="form-check-label" for="pc10">Contraste y legibilidad comprobados (tamaño y peso de fuentes)</label>
+        </div>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">Bloque C</span>
+        <h2>Fuentes e imágenes</h2>
+      </div>
+
+      <div class="chk-list reveal">
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc11" data-check="11">
+          <label class="form-check-label" for="pc11">Texto convertido a curvas (<kbd class="key">Ctrl</kbd>+<kbd class="key">Q</kbd>) o fuentes incrustadas en el PDF</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc12" data-check="12">
+          <label class="form-check-label" for="pc12">Ninguna fuente sustituida ni texto faltante</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc13" data-check="13">
+          <label class="form-check-label" for="pc13">Imágenes colocadas a tamaño final, sin escalar más de lo debido</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc14" data-check="14">
+          <label class="form-check-label" for="pc14">Ningún mapa de bits por debajo de 300 ppp</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc15" data-check="15">
+          <label class="form-check-label" for="pc15">Archivos vinculados incluidos (o empaquetados con "Reunir para salida")</label>
+        </div>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">Bloque D</span>
+        <h2>Exportación y entrega</h2>
+      </div>
+
+      <div class="chk-list reveal">
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc16" data-check="16">
+          <label class="form-check-label" for="pc16">Vista previa de separaciones CMYK revisada</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc17" data-check="17">
+          <label class="form-check-label" for="pc17">Comprobación previa (<em>preflight</em>) sin errores</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc18" data-check="18">
+          <label class="form-check-label" for="pc18"><strong>PDF/X-1a o PDF/X-3</strong> seleccionado al publicar</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc19" data-check="19">
+          <label class="form-check-label" for="pc19">Marcas de corte y registro activadas si la imprenta las pide</label>
+        </div>
+        <div class="form-check chk">
+          <input class="form-check-input" type="checkbox" id="pc20" data-check="20">
+          <label class="form-check-label" for="pc20">Archivo guardado como revisión final (v2, final) y confirmados los requisitos de la imprenta</label>
+        </div>
+      </div>
+
+      <div class="callout tip reveal mt-4">
+        <span class="label"><i class="bi bi-lightbulb"></i> Aprende a fondo</span>
+        Cada punto se explica en la lección <a href="lecciones/08-exportacion-impresion.html">08 · Exportación e impresión</a>
+        y en la <a href="glosario.html">Glosario</a> (sangrado, PDF/X, sobreimpresión, marcas de corte).
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  var KEY = 'cd-preflight';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('[data-check]'));
+  var bar = document.getElementById('preflightBar');
+  var pct = document.getElementById('preflightPct');
+  var reset = document.getElementById('preflightReset');
+  var total = boxes.length;
+  function save() {
+    localStorage.setItem(KEY, boxes.filter(function (b) { return b.checked; })
+      .map(function (b) { return b.getAttribute('data-check'); }).join(','));
+  }
+  function update() {
+    var n = boxes.filter(function (b) { return b.checked; }).length;
+    if (bar) bar.style.width = (total ? Math.round(n / total * 100) : 0) + '%';
+    if (pct) pct.textContent = n + ' de ' + total;
+  }
+  var saved = localStorage.getItem(KEY);
+  if (saved) {
+    var set = {};
+    saved.split(',').forEach(function (v) { if (v) set[v] = 1; });
+    boxes.forEach(function (b) { if (set[b.getAttribute('data-check')]) b.checked = true; });
+  }
+  boxes.forEach(function (b) {
+    b.addEventListener('change', function () { save(); update(); });
+  });
+  if (reset) reset.addEventListener('click', function () {
+    boxes.forEach(function (b) { b.checked = false; });
+    save(); update();
+  });
+  update();
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../assets/js/three-bg.js"></script>
+<script src="../assets/js/site.js?v=14"></script>
+<script src="../assets/js/motion.js?v=14"></script>
+</body>
+</html>

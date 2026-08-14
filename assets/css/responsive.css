@@ -51,11 +51,14 @@ section{ padding:2rem 0; }
 .card-vec{ padding:1.2rem; }
 .table-shortcuts{ font-size:.82rem; }
 .table-shortcuts th, .table-shortcuts td{ padding:.5rem .45rem; }
-.lesson-pager{ flex-direction:column; }
-.pager-link.next{ text-align:left; }
 .btn-vec{ width:100%; justify-content:center; }
 .hero-ctas{ display:flex; flex-direction:column; gap:.7rem; }
 .steps-vec{ grid-template-columns:1fr; }
+
+/* --- Pager prev/next: apilado solo en móvil --- */
+@media (max-width:575px){
+  .lesson-pager{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+}
 
 /* --- >= 480px: pequeños ajustes de respiración --- */
 @media (min-width:480px){

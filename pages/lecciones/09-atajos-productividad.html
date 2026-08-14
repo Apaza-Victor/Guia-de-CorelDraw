@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -136,6 +137,18 @@
         </tbody>
       </table>
 
+      <h3 class="reveal mt-4" style="font-size:1.05rem;color:var(--cyan);">Color, contorno y opciones</h3>
+      <table class="table-shortcuts reveal">
+        <tbody>
+          <tr><td>Relleno interactivo (degradados)</td><td><kbd class="key">G</kbd></td></tr>
+          <tr><td>Color del contorno / sin contorno</td><td><kbd class="key">F12</kbd> · <kbd class="key">Shift</kbd>+<kbd class="key">X</kbd></td></tr>
+          <tr><td>Relleno uniforme (diálogo)</td><td><kbd class="key">Shift</kbd>+<kbd class="key">F11</kbd></td></tr>
+          <tr><td>Opciones del programa</td><td><kbd class="key">Ctrl</kbd>+<kbd class="key">J</kbd></td></tr>
+          <tr><td>Alternar texto artístico / párrafo</td><td><kbd class="key">Ctrl</kbd>+<kbd class="key">F8</kbd></td></tr>
+          <tr><td>Vista previa de página completa</td><td><kbd class="key">F9</kbd></td></tr>
+        </tbody>
+      </table>
+
       <div class="callout tip reveal">
         <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
         Abre Herramientas → Personalización → Comandos para reasignar cualquier atajo a la combinación que
@@ -183,6 +196,42 @@
         <p class="text-dim mb-0">Rehaz el Ejercicio 6.1 (la fila de círculos) pero esta vez sin tocar el mouse más que para dibujar las formas: usa solo atajos de teclado para duplicar, agrupar, alinear y guardar. Cronometra cuánto tardas y repítelo hasta bajar el tiempo un 30%.</p>
       </div>
 
+      <div class="section-head reveal mt-5">
+        <span class="kicker">9.3</span>
+        <h2>Macros y VBA: automatiza lo repetitivo</h2>
+        <p>CorelDRAW incluye un entorno de macros (VBA) con grabadora incluida. Graba una secuencia una vez y repítela después con un atajo o un botón, sin volver a hacerla a mano.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-record-circle"></i></div>
+            <h3>Grabar una macro</h3>
+            <p>Herramientas → Macros → Grabar macro (<kbd class="key">Alt</kbd>+<kbd class="key">Shift</kbd>+<kbd class="key">R</kbd>). Ejecuta tu tarea, detén la grabación y guarda la macro con un nombre claro.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-play-circle"></i></div>
+            <h3>Ejecutar y asignar</h3>
+            <p>Herramientas → Macros → Ejecutar. Puedes asignar la macro a una combinación de teclas o colocarla como botón en una barra de herramientas.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-code-slash"></i></div>
+            <h3>Editor Visual Basic</h3>
+            <p><kbd class="key">Alt</kbd>+<kbd class="key">F11</kbd> abre el editor VBA para retocar el código grabado o escribir macros personalizadas más sofisticadas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        "Exportar PNG transparente a 300 ppp" o "aplicar el estilo de logotipo" son candidatos perfectos
+        de macro: grábalos una vez y nunca más repitas la secuencia manualmente.
+      </div>
+
     </div>
   </section>
 
@@ -227,7 +276,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>

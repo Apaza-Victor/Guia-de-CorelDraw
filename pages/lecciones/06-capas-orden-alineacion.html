@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -112,6 +113,29 @@
         </tbody>
       </table>
 
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 240" role="img" aria-label="Orden de apilamiento de objetos" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="240" style="fill:var(--ink-soft)"/>
+            <text x="24" y="30" class="t-hl">Orden de apilamiento</text>
+            <rect x="60" y="80" width="150" height="110" rx="6" style="fill:#5b8cff;opacity:.85"/>
+            <circle cx="175" cy="130" r="60" style="fill:var(--yellow);opacity:.9"/>
+            <path d="M235,150 L285,70 L330,160 Z" style="fill:var(--magenta)"/>
+            <text x="195" y="210" text-anchor="middle" class="t-sm">lo dibujado al final queda al frente</text>
+            <text x="420" y="30" class="t-hl">Vista en el Gestor de objetos</text>
+            <rect x="420" y="50" width="260" height="150" rx="8" style="fill:var(--panel);stroke:var(--line)"/>
+            <text x="436" y="76" class="t-sm">▸ Página 1</text>
+            <rect x="440" y="86" width="90" height="24" rx="5" style="fill:var(--magenta);opacity:.85"/>
+            <text x="540" y="103" class="t-sm">Triángulo · arriba</text>
+            <rect x="440" y="116" width="90" height="24" rx="5" style="fill:var(--yellow);opacity:.9"/>
+            <text x="540" y="133" class="t-sm">Círculo</text>
+            <rect x="440" y="146" width="90" height="24" rx="5" style="fill:#5b8cff;opacity:.85"/>
+            <text x="540" y="163" class="t-sm">Rectángulo · fondo</text>
+          </g>
+        </svg>
+        <div class="fig-caption"><b>Apilamiento</b> — el primer objeto dibujado queda en el fondo; cada objeto nuevo se coloca encima. El Gestor de objetos muestra ese orden de arriba (frente) hacia abajo (fondo).</div>
+      </div>
+
       <div class="section-head reveal mt-5">
         <span class="kicker">6.3</span>
         <h2>Agrupar vs. combinar</h2>
@@ -155,6 +179,43 @@
       <div class="exercise reveal">
         <h4><i class="bi bi-pencil-square"></i> Ejercicio 6.1</h4>
         <p class="text-dim mb-0">Crea cinco círculos de distinto tamaño. Selecciónalos todos y usa "Distribuir espacio horizontalmente" para separarlos de forma uniforme. Luego agrúpalos y renombra el grupo en el Gestor de objetos como "Fila de puntos".</p>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">6.5</span>
+        <h2>Bloquear, ocultar y reutilizar con símbolos</h2>
+        <p>El Gestor de objetos no solo ordena: también controla qué se puede tocar y qué se repite de forma inteligente en todo el documento.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-lock"></i></div>
+            <h3>Bloquear</h3>
+            <p>Haz clic en el candado de una capa u objeto, o usa <kbd class="key">Objeto</kbd> → Bloquear. Evita mover o editar por accidente elementos ya colocados.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-eye-slash"></i></div>
+            <h3>Ocultar</h3>
+            <p>El icono de ojo del panel oculta temporalmente un objeto o capa (no se imprime ni exporta). Útil para limpiar el lienzo mientras trabajas.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-asterisk"></i></div>
+            <h3>Símbolos</h3>
+            <p>Arrastra un objeto al Gestor de símbolos (<kbd class="key">Ctrl</kbd>+<kbd class="key">F3</kbd>): cada copia en el documento es una "instancia". Editar el símbolo maestro actualiza todas las instancias a la vez.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        Los símbolos son ideales para logotipos repetidos, botones o favicons: cambias el diseño una sola vez
+        y se actualiza en todas las páginas. Puedes sobrescribir el relleno de una instancia individual sin
+        romper el vínculo con el maestro.
       </div>
 
     </div>
@@ -201,7 +262,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>

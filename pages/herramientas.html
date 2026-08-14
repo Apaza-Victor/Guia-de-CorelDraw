@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -103,6 +104,7 @@
             <div class="card-icon"><i class="bi bi-cursor"></i></div>
             <h3>Selección</h3>
             <p>Selecciona, mueve, escala y rota objetos. La herramienta que usarás más veces.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">S</kbd><kbd class="key">Espacio</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -110,6 +112,7 @@
             <div class="card-icon"><i class="bi bi-bezier2"></i></div>
             <h3>Forma</h3>
             <p>Edita los nodos de un trazado: mueve manejadores, convierte líneas en curvas y ajusta esquinas.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">F10</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -117,6 +120,7 @@
             <div class="card-icon"><i class="bi bi-pen"></i></div>
             <h3>Pluma (Bézier)</h3>
             <p>Dibuja trazados a mano alzada con precisión de nodos y curvas. Clave para logotipos.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">P</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -124,6 +128,7 @@
             <div class="card-icon"><i class="bi bi-square"></i></div>
             <h3>Rectángulo</h3>
             <p>Dibuja rectángulos y cuadrados; con <kbd class="key">Ctrl</kbd> obtienes proporciones perfectas.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">F6</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -131,6 +136,7 @@
             <div class="card-icon"><i class="bi bi-circle"></i></div>
             <h3>Elipse</h3>
             <p>Dibuja elipses y círculos; con <kbd class="key">Ctrl</kbd> obtienes circunferencias exactas.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">F7</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -138,6 +144,7 @@
             <div class="card-icon"><i class="bi bi-vector-pen"></i></div>
             <h3>Dibujo inteligente</h3>
             <p>Convierte trazos a mano en formas geométricas reconocidas automáticamente.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><span class="text-faint" style="font-size:.85rem;">sin atajo fijo</span></div>
           </div>
         </div>
       </div>
@@ -153,6 +160,7 @@
             <div class="card-icon"><i class="bi bi-droplet"></i></div>
             <h3>Relleno interactivo</h3>
             <p>Aplica degradados, patrones o texturas arrastrando directamente sobre el objeto.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">G</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -160,6 +168,7 @@
             <div class="card-icon"><i class="bi bi-eyedropper"></i></div>
             <h3>Cuentagotas</h3>
             <p>Toma el color exacto de cualquier punto del diseño y lo copia a tu relleno o contorno.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">E</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -167,6 +176,7 @@
             <div class="card-icon"><i class="bi bi-border-all"></i></div>
             <h3>Contorno</h3>
             <p>Ajusta grosor, estilo y color del trazo que bordea los objetos.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">F12</kbd></div>
           </div>
         </div>
       </div>
@@ -182,6 +192,7 @@
             <div class="card-icon"><i class="bi bi-arrows-move"></i></div>
             <h3>Transformar</h3>
             <p>Mueve, gira, inclina o refleja objetos con precisión numérica.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><span class="text-faint" style="font-size:.85rem;">panel Transformación</span></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -189,6 +200,7 @@
             <div class="card-icon"><i class="bi bi-stack"></i></div>
             <h3>Mezcla</h3>
             <p>Interpola una secuencia de objetos entre dos formas para crear degradados y transiciones.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><kbd class="key">M</kbd></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -196,6 +208,7 @@
             <div class="card-icon"><i class="bi bi-box-seam"></i></div>
             <h3>Extrusión</h3>
             <p>Da volumen y profundidad 3D a objetos y texto, como la vista previa 3D de la portada.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><span class="text-faint" style="font-size:.85rem;">sin atajo fijo</span></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -203,6 +216,7 @@
             <div class="card-icon"><i class="bi bi-sun"></i></div>
             <h3>Sombra</h3>
             <p>Añade sombras suaves y direccionales para dar realismo a los diseños.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><span class="text-faint" style="font-size:.85rem;">sin atajo fijo</span></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -210,6 +224,7 @@
             <div class="card-icon"><i class="bi bi-bounding-box"></i></div>
             <h3>PowerClip</h3>
             <p>Recorta el contenido de un objeto dentro de otro, como una ventana.</p>
+            <div class="card-key"><span class="lbl">Menú</span><span class="text-faint" style="font-size:.85rem;">Objeto → PowerClip</span></div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 reveal">
@@ -217,6 +232,7 @@
             <div class="card-icon"><i class="bi bi-pip"></i></div>
             <h3>Transparencia</h3>
             <p>Controla la opacidad de rellenos y contornos para superposiciones elegantes.</p>
+            <div class="card-key"><span class="lbl">Atajo</span><span class="text-faint" style="font-size:.85rem;">ver lección 04</span></div>
           </div>
         </div>
       </div>
@@ -253,7 +269,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../assets/js/three-bg.js"></script>
-<script src="../assets/js/site.js?v=8"></script>
-<script src="../assets/js/motion.js?v=8"></script>
+<script src="../assets/js/site.js?v=14"></script>
+<script src="../assets/js/motion.js?v=14"></script>
 </body>
 </html>

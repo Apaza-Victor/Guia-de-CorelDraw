@@ -2,7 +2,7 @@
    site.js
    Comportamiento compartido por TODAS las páginas:
    - Tema claro/oscuro (persistente en localStorage)
-   - Menú móvil tipo cajón y dropdown "Módulos"
+   - Menú móvil tipo cajón
    - Buscador de la guía (índice estático local)
    - Barra de progreso de lectura
    - Animaciones de entrada y scroll-reveal con anime.js
@@ -59,23 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navClose) navClose.addEventListener('click', closeNav);
   if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
 
-  /* ---------- Dropdown "Módulos" ---------- */
-  const dropdown = document.getElementById('modulesDropdown');
-  if (dropdown) {
-    const ddToggle = dropdown.querySelector('.h-link');
-    ddToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = dropdown.classList.toggle('is-open');
-      ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target)) dropdown.classList.remove('is-open');
-    });
-    dropdown.addEventListener('click', (e) => {
-      if (e.target.closest('.dd-item')) dropdown.classList.remove('is-open');
-    });
-  }
-
   /* ---------- Buscador ---------- */
   const searchOverlay = document.getElementById('searchOverlay');
   const searchToggle = document.getElementById('searchToggle');
@@ -90,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     : '';
 
   const SEARCH_INDEX = [
-    { t:'Portada — CorelDraw de Cero a Experto', d:'Inicio de la guía, ruta de 11 lecciones y plan de 8 semanas.', k:'inicio portada guia plan estudio', u:'index.html' },
+    { t:'Portada — CorelDraw de Cero a Experto', d:'Inicio de la guía, ruta de 19 lecciones y plan de estudio.', k:'inicio portada guia plan estudio', u:'index.html' },
     { t:'01 · Introducción y entorno de trabajo', d:'Instalación, interfaz y primer documento configurado.', k:'instalacion entorno interfaz documento cmyk rgb', u:'pages/lecciones/01-introduccion-y-entorno.html' },
     { t:'02 · Selección, formas y transformación', d:'Herramienta Selección, Forma y transformar objetos.', k:'seleccion forma transformacion mover escalar rotar', u:'pages/lecciones/02-seleccion-formas-transformacion.html' },
     { t:'03 · Dibujo vectorial y curvas Bézier', d:'Pluma, Bézier, trazado inteligente y operaciones booleanas.', k:'bezier curvas nodos manejadores pluma booleanas', u:'pages/lecciones/03-dibujo-vectorial-curvas-bezier.html' },
@@ -102,12 +85,22 @@ document.addEventListener('DOMContentLoaded', () => {
     { t:'09 · Atajos y productividad', d:'Atajos de teclado, macros y hábitos de usuario avanzado.', k:'atajos teclado shortcuts macros productividad', u:'pages/lecciones/09-atajos-productividad.html' },
     { t:'10 · Proyectos prácticos guiados', d:'Logotipo, tarjeta, cartel e ilustración de principio a fin.', k:'proyectos logotipo tarjeta cartel ilustracion portafolio', u:'pages/lecciones/10-proyectos-practicos.html' },
     { t:'11 · Plan de estudio y certificación', d:'Ruta de 8 semanas, recursos y examen CCA.', k:'plan estudio certificacion cca 8 semanas', u:'pages/lecciones/11-plan-estudio-certificacion.html' },
+    { t:'12 · Mapas de bits y PowerTRACE', d:'Importar, remuestrear y vectorizar imágenes con PowerTRACE.', k:'mapas bits powertrace vectorizar bitmap importar remuestrear', u:'pages/lecciones/12-mapas-de-bits-y-powertrace.html' },
+    { t:'13 · Precisión: guías, cuadrículas y medidas', d:'Reglas, unidades, guías, cuadrícula y herramientas de medición.', k:'guias cuadricula reglas unidades medidas precision ajuste', u:'pages/lecciones/13-guias-cuadriculas-precision.html' },
+    { t:'14 · Documentos multipágina y plantillas', d:'Páginas, capas maestras, numeración y plantillas .cdt.', k:'multipagina capa maestra plantilla cdt numeracion paginas', u:'pages/lecciones/14-documentos-multipagina-plantillas.html' },
+    { t:'15 · Texto avanzado: estilos, flujo y tablas', d:'Estilos de carácter y párrafo, columnas, flujo y tablas.', k:'texto avanzado estilos columnas tablas flujo envolvente', u:'pages/lecciones/15-texto-avanzado-estilos-flujo-tablas.html' },
+    { t:'16 · Gestor de objetos y símbolos avanzados', d:'Gestor a fondo, filtros, capas maestras, símbolos y bibliotecas.', k:'gestor objetos simbolos instancias biblioteca csl estilos objeto', u:'pages/lecciones/16-gestor-de-objetos-simbolos-avanzados.html' },
+    { t:'17 · Intercambio de formatos y compatibilidad', d:'CDR, AI, EPS, PDF, PDF/X y SVG: cuándo usar cada formato.', k:'formatos compatibilidad cdr ai eps pdf svg pdfx', u:'pages/lecciones/17-intercambio-de-formatos.html' },
+    { t:'18 · Corel PHOTO-PAINT y edición de fotos', d:'Retoque, máscaras, selecciones y ajustes de color de fotografías.', k:'photo paint retoque mascaras seleccion curvas niveles', u:'pages/lecciones/18-corel-photo-paint-edicion-fotos.html' },
+    { t:'19 · Medios artísticos y dibujo a mano alzada', d:'Mano alzada, pinceles, medios artísticos, B-Spline y tableta.', k:'medios artisticos pinceles mano alzada b-spline tableta dibujo', u:'pages/lecciones/19-medios-artisticos-dibujo.html' },
     { t:'Recursos', d:'Plantillas, paletas y enlaces para seguir aprendiendo.', k:'recursos materiales plantillas paletas enlaces', u:'pages/recursos.html' },
     { t:'Glosario', d:'Términos clave del diseño vectorial y CorelDraw.', k:'glosario definiciones terminos vectorial nodo', u:'pages/glosario.html' },
     { t:'Comandos', d:'Atajos de teclado y comandos esenciales de CorelDraw.', k:'comandos atajos teclado shortcuts', u:'pages/comandos.html' },
     { t:'Herramientas', d:'Catálogo de herramientas de la caja de herramientas.', k:'herramientas caja seleccion bezier pluma', u:'pages/herramientas.html' },
-    { t:'Módulos', d:'Los 11 módulos de la ruta con su nivel y duración.', k:'modulos ruta lecciones niveles duracion', u:'pages/modulos.html' },
-    { t:'Cómo usar esta guía', d:'Tres pasos simples para aprovechar las 11 lecciones.', k:'como usar primeros pasos metodo portafolio', u:'pages/como-usar.html' },
+    { t:'Preguntas frecuentes', d:'Dudas típicas de quien empieza: precio, vector vs. píxel, PDF/X y más.', k:'preguntas frecuentes faq dudas precio vector pdf', u:'pages/preguntas-frecuentes.html' },
+    { t:'Checklist de prepress', d:'20 comprobaciones para entregar archivos listos para imprenta.', k:'checklist prepress imprenta sangrado cmyk pdf/x preflight', u:'pages/checklist-preflight.html' },
+    { t:'Módulos', d:'Los 19 módulos de la ruta con su nivel y duración.', k:'modulos ruta lecciones niveles duracion', u:'pages/modulos.html' },
+    { t:'Cómo usar esta guía', d:'Tres pasos simples para aprovechar las 19 lecciones.', k:'como usar primeros pasos metodo portafolio', u:'pages/como-usar.html' },
     { t:'¿Qué es CorelDraw?', d:'Editor vectorial: definición, usos profesionales y suite.', k:'que es coreldraw vectorial definicion usos suite', u:'pages/que-es.html' },
     { t:'Método de la guía', d:'Aprender viendo, practicando y repitiendo.', k:'metodo metodologia niveles basico intermedio avanzado', u:'pages/metodo.html' },
   ];
@@ -119,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ['glosario', 'bi-book'],
     ['comandos', 'bi-keyboard'],
     ['herramientas', 'bi-tools'],
+    ['preguntas-frecuentes', 'bi-question-circle'],
+    ['checklist-preflight', 'bi-check2-square'],
     ['como-usar', 'bi-lightbulb'],
     ['que-es', 'bi-question-circle'],
     ['metodo', 'bi-diagram-3']
@@ -176,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') {
       closeSearch();
       closeNav();
-      if (dropdown) dropdown.classList.remove('is-open');
     }
   });
 

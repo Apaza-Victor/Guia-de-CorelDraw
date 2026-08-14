@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Preguntas frecuentes · CorelDraw de Cero a Experto</title>
+<meta name="description" content="Respuestas a las dudas más comunes de quien empieza con CorelDRAW: precio, vector vs. píxel, resolución, PDF/X y entrega a imprenta.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Iconos -->
+<link rel="icon" type="image/svg+xml" href="../assets/img/coreldraw-icon.svg">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../assets/css/responsive.css?v=14">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="page-scrim"></div>
+<div class="read-progress" id="readProgress"></div>
+
+<header class="site-header">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html" aria-label="CorelDraw de Cero a Experto">
+      <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+      <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <div class="nav-head">
+        <a class="brand" href="../index.html" aria-label="Inicio de la guía">
+          <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw">
+          <span class="brand-text">CorelDraw<small>Cero a Experto</small></span>
+        </a>
+        <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <a class="h-link" href="../index.html">Inicio</a>      <a class="h-link" href="modulos.html">Módulos</a>
+      <a class="h-link" href="recursos.html">Recursos</a>
+      <a class="h-link" href="glosario.html">Glosario</a>
+      <a class="h-link" href="comandos.html">Comandos</a>
+      <a class="h-link" href="herramientas.html">Herramientas</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Buscar en la guía"><i class="bi bi-search"></i></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema claro u oscuro"><i class="bi bi-moon-stars"></i></button>
+      <button class="menu-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-field">
+      <i class="bi bi-search text-faint"></i>
+      <input type="text" id="searchInput" placeholder="Buscar lecciones, atajos, conceptos…" autocomplete="off" aria-label="Buscar">
+      <button class="icon-btn" id="searchClose" aria-label="Cerrar buscador"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+      <div class="search-hint">
+        <span><kbd>Enter</kbd> abrir resultado</span>
+        <span><kbd>Esc</kbd> cerrar</span>
+        <span><b>/</b> buscar en la guía</span>
+      </div>
+  </div>
+</div>
+
+<div class="app-shell">
+<main class="content">
+
+  <div class="cmyk-rule"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:2.6rem;padding-bottom:0;">
+    <div class="container-narrow">
+      <span class="eyebrow js-anim-eyebrow"><i class="bi bi-question-circle"></i> Resuelve tus dudas</span>
+      <h1 class="js-anim-title" style="font-size:clamp(1.9rem,4.6vw,2.7rem);max-width:none;">Preguntas frecuentes</h1>
+      <p class="lead js-anim-lead">Las dudas que aparecen una y otra vez al empezar con CorelDRAW, respondidas en un párrafo.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+
+      <div class="accordion accordion-vec reveal" id="accFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1"><i class="bi bi-cash-coin me-2"></i>&nbsp;¿CorelDRAW es gratis?</button></h3>
+          <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#accFaq">
+            <div class="accordion-body">No, es un programa comercial. Existe una <strong>prueba gratuita de 15 días</strong> en el sitio oficial de Corel, y el pago puede ser por suscripción o licencia permanente. Si eres estudiante o docente, busca la opción educativa (CorelDRAW Academic) que suele ser mucho más económica.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2"><i class="bi bi-pencil me-2"></i>&nbsp;¿Necesito saber dibujar para usarlo?</button></h3>
+          <div id="f2" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">No. CorelDRAW es una <strong>herramienta</strong>: el ojo se entrena con la práctica. Esta guía te lleva de la interfaz a proyectos completos paso a paso, sin asumir que sabes dibujar. La destreza con la herramienta Pluma se consigue repitiendo los ejercicios, no con talento previo.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3"><i class="bi bi-diagram-3 me-2"></i>&nbsp;¿Qué diferencia hay entre CorelDRAW y Photoshop?</button></h3>
+          <div id="f3" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">Son complementarios. CorelDRAW es un <strong>editor vectorial</strong> (logotipos, carteles, ilustración que se escala sin perder calidad). Photoshop es un <strong>editor de mapa de bits</strong> (fotografía y retoque). Para identidades de marca y piezas de imprenta, el trabajo principal suele hacerse en vectorial. Se explica con más detalle en <a href="que-es.html">¿Qué es CorelDraw?</a>.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4"><i class="bi bi-file-earmark-arrow-up me-2"></i>&nbsp;¿Puedo abrir archivos de Illustrator (.ai o .eps)?</button></h3>
+          <div id="f4" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">Sí. CorelDRAW <strong>importa AI y EPS</strong> directamente (Archivo → Abrir o Importar). La mayoría de los trazados y colores se conservan; los efectos muy complejos o ciertas mallas de degradado pueden llegar simplificados y requerir ajustes. Para el camino inverso, exporta en formato AI o EPS desde CorelDRAW.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5"><i class="bi bi-image me-2"></i>&nbsp;¿A qué resolución exporto para web y para imprenta?</button></h3>
+          <div id="f5" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">Para pantalla basta con <strong>72–150 ppp</strong> (píxeles por pulgada); para imprenta se usa <strong>300 ppp</strong>. Los objetos 100% vectoriales no tienen resolución: se imprimen nítidos a cualquier tamaño. La resolución solo importa para las imágenes de mapa de bits que coloques. Ver lección <a href="lecciones/08-exportacion-impresion.html">08</a>.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f6"><i class="bi bi-palette me-2"></i>&nbsp;¿Por qué mis colores cambian al imprimir?</button></h3>
+          <div id="f6" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">Casi siempre porque el documento está en <strong>RGB</strong> (pantalla) y la imprenta trabaja en <strong>CMYK</strong>. Cada perfil de color traduce los tonos de forma distinta. Crea el documento en CMYK si el destino es imprenta y usa la vista previa de separaciones para detectar negros y cianes "sucios". Lo ampliamos en la lección <a href="lecciones/04-color-relleno-transparencia.html">04</a> y la <a href="checklist-preflight.html">checklist de prepress</a>.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f7"><i class="bi bi-filetype-pdf me-2"></i>&nbsp;¿Qué es PDF/X y cuándo debo usarlo?</button></h3>
+          <div id="f7" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">PDF/X es una familia de <strong>estándares para intercambiar archivos de imprenta</strong>: garantiza fuentes incrustadas, convierte a CMYK y normaliza el sangrado y las marcas. Se elige al publicar el PDF, habitualmente <strong>PDF/X-1a o PDF/X-3</strong>. Úsalo siempre que la imprenta lo pida o cuando quieras minimizar sorpresas. Detalles en la lección <a href="lecciones/08-exportacion-impresion.html">08</a>.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f8"><i class="bi bi-box-seam me-2"></i>&nbsp;¿Cómo entrego un archivo listo a la imprenta?</button></h3>
+          <div id="f8" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">Sigue siempre los requisitos de tu imprenta, pero el flujo típico es: <strong>modo CMYK, 300 ppp, sangrado de 2–3 mm, fuentes convertidas a curvas o incrustadas, y exportación en PDF/X</strong>. Usa "Reunir para salida" para empaquetar fuentes e imágenes. Tienes la versión completa en la <a href="checklist-preflight.html">checklist de prepress</a>.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f9"><i class="bi bi-award me-2"></i>&nbsp;¿Vale la pena la certificación CCA?</button></h3>
+          <div id="f9" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">Para un CV de diseñador, <strong>sí</strong>: es un aval reconocido de manejo de la herramienta. No hace falta "saberlo todo", sino dominar los cuatro bloques del examen (básicos, fundamentos de diseño, diseño avanzado y salida). La lección <a href="lecciones/11-plan-estudio-certificacion.html">11</a> traza una ruta de 8 semanas hasta presentarlo.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f10"><i class="bi bi-mortarboard me-2"></i>&nbsp;¿Puedo seguir esta guía sin el programa instalado?</button></h3>
+          <div id="f10" class="accordion-collapse collapse" data-bs-parent="#accFaq">
+            <div class="accordion-body">Puedes leer y tomar notas, pero <strong>aprender a usar CorelDRAW sin CorelDRAW es imposible</strong>. Descarga la prueba gratuita de 15 días para acompañar las lecciones, o plantéate la versión educativa si estudias. La guía está pensada para leerse con el programa abierto al lado.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip reveal mt-4">
+        <span class="label"><i class="bi bi-lightbulb"></i> ¿No encuentras tu duda?</span>
+        Usa el buscador (<kbd class="key">/</kbd>) para localizar el término en las lecciones, o revisa el
+        <a href="glosario.html">Glosario</a> y la <a href="checklist-preflight.html">checklist de prepress</a>.
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container-narrow d-flex flex-wrap justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <img class="brand-logo" src="../assets/img/coreldraw-icon.svg" alt="Logo CorelDraw" style="width:24px;height:28px;">
+        <strong style="color:var(--key);font-family:var(--f-display);">CorelDraw · Cero a Experto</strong>
+      </div>
+      <p class="mb-0">Guía independiente de aprendizaje. CorelDRAW® es una marca registrada de Corel Corporation; este material no está afiliado a Corel.</p>
+            <p class="mb-0 text-faint" style="font-size:.8rem;">© 2026 Víctor Hugo Apaza. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <p class="mb-1">Construido con Bootstrap, Three.js, Babylon.js y anime.js. <span class="text-faint">· v2.1</span></p>
+      <p class="mb-0">Responsivo desde 360px hasta pantallas 4K.</p>
+    </div>
+  </div>
+</footer>
+  </main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="../assets/js/three-bg.js"></script>
+<script src="../assets/js/site.js?v=14"></script>
+<script src="../assets/js/motion.js?v=14"></script>
+</body>
+</html>

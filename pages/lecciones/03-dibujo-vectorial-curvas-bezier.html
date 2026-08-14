@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -100,6 +101,60 @@
           en cada extremo) que definen la dirección y la intensidad de la curvatura a cada lado. Mover un
           manejador es literalmente "estirar" la curva sin mover el nodo.
         </p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 330" role="img" aria-label="Anatomía de una curva Bézier y tipos de nodo" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="330" style="fill:var(--ink-soft)"/>
+            <path d="M90,120 C170,30 230,20 300,60" class="ln-cy"/>
+            <path d="M300,60 C390,110 460,150 520,130" class="ln-cy"/>
+            <line x1="300" y1="60" x2="215" y2="10" class="ln-dim"/>
+            <line x1="300" y1="60" x2="390" y2="110" class="ln-dim"/>
+            <circle cx="215" cy="10" r="4" class="dot-mg"/>
+            <circle cx="390" cy="110" r="4" class="dot-mg"/>
+            <circle cx="90" cy="120" r="5" class="dot"/>
+            <circle cx="300" cy="60" r="6" style="fill:var(--cyan);stroke:var(--ink-soft);stroke-width:2"/>
+            <circle cx="520" cy="130" r="5" class="dot"/>
+            <text x="128" y="84" class="t-sm">segmento</text>
+            <text x="430" y="152" class="t-sm">curva resultante</text>
+            <text x="56" y="148" class="t-label">nodo</text>
+            <text x="300" y="42" text-anchor="middle" class="t-label">nodo seleccionado</text>
+            <text x="196" y="30" text-anchor="middle" class="t-sm">manejador</text>
+            <text x="398" y="132" class="t-sm">manejador</text>
+            <line x1="20" y1="170" x2="700" y2="170" class="ln"/>
+            <text x="24" y="192" class="t-hl">Tipos de nodo</text>
+            <path d="M60,250 L120,200 L180,250" class="ln" style="stroke:var(--text-dim)"/>
+            <line x1="120" y1="200" x2="95" y2="178" class="ln-dim"/>
+            <line x1="120" y1="200" x2="155" y2="170" class="ln-dim"/>
+            <circle cx="95" cy="178" r="3.5" class="dot-yl"/>
+            <circle cx="155" cy="170" r="3.5" class="dot-yl"/>
+            <path d="M115,195 l5,-5 l5,5 l-5,5 Z" style="fill:var(--cyan)"/>
+            <text x="120" y="278" text-anchor="middle" class="t-label">Cúspide</text>
+            <text x="120" y="292" text-anchor="middle" class="t-sm">vuelta cerrada · manejadores libres</text>
+            <path d="M300,250 C320,215 340,215 360,250 C380,285 400,285 420,250" class="ln" style="stroke:var(--text-dim)"/>
+            <line x1="360" y1="250" x2="330" y2="222" class="ln-dim"/>
+            <line x1="360" y1="250" x2="390" y2="278" class="ln-dim"/>
+            <circle cx="330" cy="222" r="3.5" class="dot-yl"/>
+            <circle cx="390" cy="278" r="3.5" class="dot-yl"/>
+            <circle cx="300" cy="250" r="4" class="dot"/>
+            <circle cx="360" cy="250" r="5" style="fill:var(--cyan)"/>
+            <circle cx="420" cy="250" r="4" class="dot"/>
+            <text x="360" y="278" text-anchor="middle" class="t-label">Suave</text>
+            <text x="360" y="292" text-anchor="middle" class="t-sm">un manejador mueve ambos lados</text>
+            <path d="M540,260 C560,205 600,205 620,260" class="ln" style="stroke:var(--text-dim)"/>
+            <line x1="580" y1="230" x2="555" y2="222" class="ln-dim"/>
+            <line x1="580" y1="230" x2="605" y2="222" class="ln-dim"/>
+            <circle cx="555" cy="222" r="3.5" class="dot-yl"/>
+            <circle cx="605" cy="222" r="3.5" class="dot-yl"/>
+            <circle cx="540" cy="260" r="4" class="dot"/>
+            <circle cx="580" cy="230" r="5" style="fill:var(--cyan)"/>
+            <circle cx="620" cy="260" r="4" class="dot"/>
+            <text x="580" y="278" text-anchor="middle" class="t-label">Simétrico</text>
+            <text x="580" y="292" text-anchor="middle" class="t-sm">manejadores opuestos de igual longitud</text>
+          </g>
+        </svg>
+        <div class="fig-caption"><b>Bézier</b> — los nodos anclan la curva y los manejadores (puntos de control) definen dirección e intensidad. Con la herramienta <em>Forma</em>, haz clic en un nodo y pulsa el botón del tipo deseado en la barra de propiedades.</div>
       </div>
 
       <div class="section-head reveal mt-4">
@@ -175,9 +230,88 @@
         </tbody>
       </table>
 
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 216" role="img" aria-label="Operaciones booleanas con dos círculos superpuestos" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="216" style="fill:var(--ink-soft)"/>
+            <text x="72" y="28" text-anchor="middle" class="t-hl">Origen</text>
+            <circle cx="50" cy="90" r="30" style="fill:var(--cyan);opacity:.75"/>
+            <circle cx="94" cy="90" r="30" style="fill:var(--magenta);opacity:.7"/>
+            <text x="72" y="160" text-anchor="middle" class="t-label">Unir · Recortar · Intersección</text>
+            <text x="72" y="176" text-anchor="middle" class="t-sm">dos objetos seleccionados</text>
+            <text x="216" y="28" text-anchor="middle" class="t-hl">Unir</text>
+            <path d="M164,90 A30,30 0 0 1 194,60 L238,60 A30,30 0 0 1 268,90 A30,30 0 0 1 238,120 L194,120 A30,30 0 0 1 164,90 Z" style="fill:var(--cyan);opacity:.8;stroke:var(--cyan);stroke-width:1.5"/>
+            <text x="216" y="160" text-anchor="middle" class="t-label">Weld</text>
+            <text x="216" y="176" text-anchor="middle" class="t-sm">un solo contorno exterior</text>
+            <text x="360" y="28" text-anchor="middle" class="t-hl">Recortar</text>
+            <circle cx="338" cy="90" r="30" style="fill:var(--cyan);opacity:.85"/>
+            <path d="M360,69.6 A30,30 0 0 1 360,110.4 A30,30 0 0 1 360,69.6 Z" style="fill:var(--ink);stroke:var(--magenta);stroke-width:1.5;stroke-dasharray:5 4"/>
+            <circle cx="382" cy="90" r="30" style="fill:none;stroke:var(--magenta);opacity:.55;stroke-dasharray:5 4"/>
+            <text x="360" y="160" text-anchor="middle" class="t-label">Trim</text>
+            <text x="360" y="176" text-anchor="middle" class="t-sm">el superior elimina el área común</text>
+            <text x="504" y="28" text-anchor="middle" class="t-hl">Intersección</text>
+            <path d="M504,69.6 A30,30 0 0 1 504,110.4 A30,30 0 0 1 504,69.6 Z" style="fill:var(--magenta);opacity:.9;stroke:var(--magenta);stroke-width:1.5"/>
+            <circle cx="482" cy="90" r="30" style="fill:none;stroke:var(--cyan);opacity:.4;stroke-dasharray:5 4"/>
+            <circle cx="526" cy="90" r="30" style="fill:none;stroke:var(--magenta);opacity:.4;stroke-dasharray:5 4"/>
+            <text x="504" y="160" text-anchor="middle" class="t-label">Intersection</text>
+            <text x="504" y="176" text-anchor="middle" class="t-sm">solo queda el área común</text>
+            <text x="648" y="28" text-anchor="middle" class="t-hl">Combinar</text>
+            <path d="M596,90 A30,30 0 0 1 626,60 L670,60 A30,30 0 0 1 700,90 A30,30 0 0 1 670,120 L626,120 A30,30 0 0 1 596,90 Z" style="fill:var(--yellow);opacity:.45;stroke:var(--yellow);stroke-width:1.5"/>
+            <path d="M648,69.6 A30,30 0 0 1 648,110.4 A30,30 0 0 1 648,69.6 Z" style="fill:var(--ink);stroke:var(--yellow);stroke-width:1.5;stroke-dasharray:5 4"/>
+            <text x="648" y="160" text-anchor="middle" class="t-label">Combine · Ctrl+L</text>
+            <text x="648" y="176" text-anchor="middle" class="t-sm">un solo trazado con hueco</text>
+          </g>
+        </svg>
+        <div class="fig-caption">Mismo origen, cuatro resultados — <b>Unir</b> fusiona los contornos · <b>Recortar</b> sustrae el área común · <b>Intersección</b> conserva la superposición · <b>Combinar</b> genera un hueco (ideal para contraformas de letras).</div>
+      </div>
+
       <div class="exercise reveal">
         <h4><i class="bi bi-pencil-square"></i> Ejercicio 3.1</h4>
         <p class="text-dim mb-0">Dibuja dos círculos superpuestos con la herramienta Elipse. Usa "Intersección" para crear una forma tipo "vesica piscis" (almendra). Luego, con la herramienta Forma, ajusta los dos nodos resultantes a suave para redondear las puntas.</p>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">3.4</span>
+        <h2>Vectorizar mapas de bits: PowerTRACE</h2>
+        <p>No todo empieza desde cero. PowerTRACE convierte un mapa de bits (foto, logo escaneado, JPEG) en objetos vectoriales editables y escalables sin pérdida de calidad.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-lightning-charge"></i></div>
+            <h3>Vectorización rápida</h3>
+            <p>Un solo paso para resultados aceptables. Desde <kbd class="key">Mapas de bits</kbd> → Vectorización rápida, o el botón <em>Vectorizar mapa de bits</em> de la barra de propiedades.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-bounding-box"></i></div>
+            <h3>Por contorno</h3>
+            <p>Contorno (Outline Trace) es para siluetas claras: logos, clipart, fotos. Presets como <em>Logo</em>, <em>Alta calidad de imagen</em> o <em>Imagen de línea</em>.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-grid-1x2"></i></div>
+            <h3>Por línea centrada</h3>
+            <p>Línea centrada (Centerline Trace) genera curvas abiertas y trazos: ideal para ilustraciones técnicas, mapas, firmas y dibujos lineales.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout pro reveal">
+        <span class="label"><i class="bi bi-award"></i> Nivel Pro</span>
+        En la ventana de PowerTRACE juega con <strong>Detalle</strong>, <strong>Suavizado</strong> y
+        <strong>Suavizado de esquinas</strong> (la vista previa es en vivo). Para imágenes de baja resolución,
+        usa el <em>upsampling</em> con IA: modo <em>Ilustración</em> para logos y <em>Fotorrealista</em> para fotos.
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        El resultado queda agrupado y superpuesto al original. Sepáralo con la herramienta Selección y
+        elimina el mapa de bits original. Verifica en modo <em>Modelo de estructura alámbrica</em> (Vista) que
+        las líneas vectoriales no tengan nodos innecesarios.
       </div>
 
     </div>
@@ -224,7 +358,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>

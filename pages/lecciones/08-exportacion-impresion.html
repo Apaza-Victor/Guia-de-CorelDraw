@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -144,6 +145,33 @@
         </div>
       </div>
 
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 260" role="img" aria-label="Sangrado, tamaño final y zona de seguridad" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="260" style="fill:var(--ink-soft)"/>
+            <text x="24" y="28" class="t-hl">Preparación para imprenta</text>
+            <rect x="180" y="50" width="360" height="180" style="fill:none;stroke:var(--text-faint);stroke-dasharray:7 5"/>
+            <rect x="180" y="50" width="360" height="180" style="fill:var(--cyan);opacity:.4"/>
+            <rect x="200" y="70" width="320" height="140" style="fill:var(--paper);stroke:var(--magenta);stroke-width:1.6"/>
+            <rect x="214" y="84" width="292" height="112" style="fill:none;stroke:var(--cyan);stroke-width:1.4;stroke-dasharray:5 4"/>
+            <circle cx="300" cy="140" r="26" style="fill:var(--yellow);opacity:.85"/>
+            <rect x="360" y="126" width="110" height="30" rx="4" style="fill:var(--magenta);opacity:.8"/>
+            <text x="415" y="146" text-anchor="middle" style="fill:#fff;font-size:14px;font-family:var(--f-mono)">logo</text>
+            <path d="M196,56 V84 M184,70 H210" style="fill:none;stroke:var(--text-dim);stroke-width:1.6"/>
+            <path d="M524,56 V84 M510,70 H536" style="fill:none;stroke:var(--text-dim);stroke-width:1.6"/>
+            <path d="M196,224 V196 M184,210 H210" style="fill:none;stroke:var(--text-dim);stroke-width:1.6"/>
+            <path d="M524,224 V196 M510,210 H536" style="fill:none;stroke:var(--text-dim);stroke-width:1.6"/>
+            <text x="205" y="244" class="t-sm">marcas de corte</text>
+            <text x="164" y="104" text-anchor="end" class="t-label">sangrado 2–3 mm</text>
+            <line x1="168" y1="107" x2="184" y2="107" style="stroke:var(--text-dim);stroke-width:1.2"/>
+            <text x="360" y="52" text-anchor="middle" class="t-label">línea de corte · tamaño final</text>
+            <text x="536" y="150" class="t-label">zona de seguridad</text>
+            <line x1="520" y1="150" x2="506" y2="150" style="stroke:var(--text-dim);stroke-width:1.2"/>
+          </g>
+        </svg>
+        <div class="fig-caption"><b>Sangrado (bleed)</b> — los objetos que tocan el borde deben extenderse al menos 2–3 mm fuera de la línea de corte. El texto y elementos importantes se mantienen dentro de la zona de seguridad.</div>
+      </div>
+
       <div class="callout warn reveal">
         <span class="label"><i class="bi bi-exclamation-triangle"></i> Cuidado</span>
         Evita el "negro enriquecido" (una mezcla de CMY + K) en textos pequeños: en offset puede generar
@@ -159,6 +187,48 @@
       <div class="exercise reveal">
         <h4><i class="bi bi-pencil-square"></i> Ejercicio 8.1</h4>
         <p class="text-dim mb-0">Toma cualquier diseño que hayas hecho en lecciones anteriores. Configura un sangrado de 3 mm, convierte los textos a curvas, revisa la vista previa de separaciones y expórtalo como PDF listo para imprenta. Luego expórtalo también como PNG transparente para uso digital.</p>
+      </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">8.4</span>
+        <h2>Publicar PDF y la comprobación previa</h2>
+        <p>Archivo → Publicar en PDF. Elige un preset de imprenta (PDF/X) y usa la pestaña <em>Prepress</em> para activar marcas y límite de sangrado. CorelDRAW ejecuta una comprobación previa (preflight) que detecta problemas comunes antes de generar el archivo.</p>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+            <h3>Presets PDF/X</h3>
+            <p>PDF/X-1a genera CMYK plano sin transparencias; PDF/X-3 admite transparencias y mayor compatibilidad. Ambos incrustan las fuentes automáticamente.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-bounding-box"></i></div>
+            <h3>Pestaña Prepress</h3>
+            <p>Activa marcas de corte, marcas de registro y el límite de sangrado (0.125"). Ojo: activar el límite no estira los objetos; deben extenderse ya en tu documento.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-folder-symlink"></i></div>
+            <h3>Reunir para salida</h3>
+            <p>Archivo → Reunir para salida (Collect for Output) crea una carpeta con el .CDR, las fuentes y los perfiles de color: la forma más segura de entregar el archivo editable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn reveal">
+        <span class="label"><i class="bi bi-exclamation-triangle"></i> Cuidado</span>
+        El preflight avisará de "objetos fuera de página" y de texto demasiado pequeño. Los objetos fuera de
+        página son esperables cuando hay sangrado: verifica que sean exactamente los del área de sangrado.
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        ¿Listo para enviar a la imprenta? Repasa la <a href="../checklist-preflight.html">Checklist de prepress</a>
+        completa antes de exportar el PDF final.
       </div>
 
     </div>
@@ -205,7 +275,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>

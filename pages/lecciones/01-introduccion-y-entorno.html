@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -189,8 +190,102 @@
 
       <div class="exercise reveal">
         <h4><i class="bi bi-pencil-square"></i> Ejercicio 1.1</h4>
-        <p class="text-dim mb-0">Crea un documento nuevo de tamaño A4 en modo CMYK con 300 ppp. Cambia la unidad de medida a milímetros, activa las reglas (<kbd class="key">Ctrl</kbd>+<kbd class="key">Shift</kbd>+<kbd class="key">R</kbd> abre el panel de opciones) y arrastra dos guías: una vertical a 10 mm del borde y una horizontal a 15 mm.</p>
+        <p class="text-dim mb-0">Crea un documento nuevo de tamaño A4 en modo CMYK con 300 ppp. Cambia la unidad de medida a milímetros y abre el panel de opciones con <kbd class="key">Ctrl</kbd>+<kbd class="key">J</kbd> para activar las reglas. Luego arrastra dos guías: una vertical a 10 mm del borde y una horizontal a 15 mm.</p>
       </div>
+
+      <div class="section-head reveal mt-5">
+        <span class="kicker">1.4</span>
+        <h2>Personaliza y navega tu espacio de trabajo</h2>
+        <p>CorelDraw recuerda dónde dejas cada panel. Ajusta el entorno a tu flujo, guárdalo como espacio de trabajo reutilizable y domina la navegación con atajos para ir de cero a dibujar en segundos.</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 380" role="img" aria-label="Mapa de las seis zonas de la interfaz de CorelDRAW" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="380" style="fill:var(--ink-soft)"/>
+            <rect x="10" y="8" width="700" height="28" rx="4" style="fill:var(--panel-2);stroke:var(--line)"/>
+            <text x="40" y="26" class="t-sm">Archivo · Editar · Ver · Diseño · Efectos · Mapa de bits · Texto · Ventana · Ayuda</text>
+            <rect x="10" y="40" width="700" height="28" rx="4" style="fill:var(--panel);stroke:var(--line)"/>
+            <text x="40" y="58" class="t-sm">Barra de propiedades — cambia según la herramienta u objeto seleccionado</text>
+            <rect x="60" y="72" width="444" height="12" style="fill:var(--panel-2);stroke:var(--line-soft)"/>
+            <text x="64" y="81" class="t-sm">mm</text>
+            <rect x="60" y="84" width="12" height="264" style="fill:var(--panel-2);stroke:var(--line-soft)"/>
+            <text x="63" y="372" class="t-sm" transform="rotate(-90 66 200)">cm</text>
+            <rect x="10" y="84" width="44" height="264" rx="6" style="fill:var(--panel-2);stroke:var(--line)"/>
+            <rect x="508" y="84" width="152" height="264" rx="6" style="fill:var(--panel-2);stroke:var(--line)"/>
+            <text x="516" y="112" class="t-sm">Cuadros acoplables</text>
+            <rect x="664" y="84" width="46" height="264" rx="6" style="fill:var(--panel-2);stroke:var(--line)"/>
+            <rect x="76" y="84" width="428" height="264" style="fill:var(--ink);stroke:var(--line)"/>
+            <rect x="104" y="104" width="220" height="228" rx="2" style="fill:var(--paper);stroke:var(--line)"/>
+            <rect x="120" y="120" width="90" height="18" rx="2" style="fill:var(--cyan);opacity:.35"/>
+            <rect x="120" y="146" width="160" height="12" rx="2" style="fill:var(--key);opacity:.16"/>
+            <rect x="120" y="164" width="120" height="12" rx="2" style="fill:var(--key);opacity:.16"/>
+            <rect x="120" y="182" width="140" height="12" rx="2" style="fill:var(--key);opacity:.16"/>
+            <rect x="120" y="200" width="60" height="60" rx="4" style="fill:var(--yellow);opacity:.5"/>
+            <rect x="186" y="200" width="60" height="60" rx="4" style="fill:var(--magenta);opacity:.4"/>
+            <rect x="120" y="268" width="200" height="10" rx="2" style="fill:var(--key);opacity:.12"/>
+            <text x="214" y="330" text-anchor="middle" class="t-sm">Página (todo lo que quede dentro se imprime)</text>
+            <rect x="10" y="356" width="700" height="14" rx="4" style="fill:var(--panel-2);stroke:var(--line)"/>
+            <text x="40" y="366" class="t-sm">x: 0 · y: 0 — Barra de estado</text>
+            <circle cx="26" cy="22" r="8" style="fill:var(--cyan)"/><text x="26" y="26" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">1</text>
+            <circle cx="26" cy="54" r="8" style="fill:var(--cyan)"/><text x="26" y="58" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">2</text>
+            <circle cx="32" cy="96" r="8" style="fill:var(--cyan)"/><text x="32" y="100" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">3</text>
+            <circle cx="120" cy="116" r="8" style="fill:var(--cyan)"/><text x="120" y="120" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">4</text>
+            <circle cx="680" cy="96" r="8" style="fill:var(--cyan)"/><text x="680" y="100" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">5</text>
+            <circle cx="524" cy="96" r="8" style="fill:var(--cyan)"/><text x="524" y="100" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">6</text>
+            <circle cx="26" cy="363" r="8" style="fill:var(--cyan)"/><text x="26" y="367" text-anchor="middle" font-size="11" font-weight="700" style="fill:#fff">7</text>
+          </g>
+        </svg>
+        <div class="fig-caption">Mapa de la interfaz — <b>1</b> barra de menús · <b>2</b> barra de propiedades · <b>3</b> caja de herramientas · <b>4</b> página y escritorio · <b>5</b> paleta de colores · <b>6</b> cuadros acoplables · <b>7</b> reglas y barra de estado.</div>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
+            <h3>Acopla y arrastra</h3>
+            <p>Cada cuadro acoplable puede anclarse a los bordes o flotar. El icono de panel vertical en su cabecera lo fija como pestaña junto a otros paneles.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-bookmark-heart"></i></div>
+            <h3>Guarda tu espacio</h3>
+            <p>Organiza ventanas y paneles a tu gusto y guárdalo en <kbd class="key">Ventana</kbd> → Espacios de trabajo → Guardar como… Cámbialo cuando quieras desde el mismo menú.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-keyboard"></i></div>
+            <h3>Atajos a medida</h3>
+            <p>Casi todos los atajos son editables en <kbd class="key">Ctrl</kbd>+<kbd class="key">J</kbd> → Personalización → Comandos, categoría <em>Atajos de teclado</em>. Define los tuyos y expórtalos como espacio de trabajo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Al empezar bastan tres zonas: barra de propiedades, paleta de colores y Gestor de objetos. El resto se
+        activa bajo demanda desde <kbd class="key">Ventana</kbd> → Cuadros de acoplamiento, evitando una interfaz saturada.
+      </div>
+
+      <div class="section-head reveal mt-4">
+        <span class="kicker">1.5</span>
+        <h2>Navegación rápida: zoom y vista previa</h2>
+        <p>Antes de dibujar, memoriza estos atajos de vista. Te ahorrarán decenas de clics a lo largo de toda la guía.</p>
+      </div>
+
+      <table class="table-shortcuts reveal">
+        <thead><tr><th>Atajo</th><th>Acción</th></tr></thead>
+        <tbody>
+          <tr><td><kbd class="key">F2</kbd></td><td>Acercar zoom (haz clic para aumentar)</td></tr>
+          <tr><td><kbd class="key">F3</kbd></td><td>Alejar zoom</td></tr>
+          <tr><td><kbd class="key">F4</kbd></td><td>Ajustar todos los objetos a la pantalla</td></tr>
+          <tr><td><kbd class="key">Shift</kbd>+<kbd class="key">F4</kbd></td><td>Ajustar la página completa a la pantalla</td></tr>
+          <tr><td><kbd class="key">F9</kbd></td><td>Vista previa de página completa (alternar)</td></tr>
+          <tr><td><kbd class="key">Z</kbd> · <kbd class="key">H</kbd></td><td>Herramientas Zoom y Mano (panorámica)</td></tr>
+        </tbody>
+      </table>
 
     </div>
   </section>
@@ -236,7 +331,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>

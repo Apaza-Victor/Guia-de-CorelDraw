@@ -19,12 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Estilos propios -->
-<link rel="stylesheet" href="../../assets/css/style.css?v=8">
-<link rel="stylesheet" href="../../assets/css/responsive.css?v=8">
+<link rel="stylesheet" href="../../assets/css/style.css?v=14">
+<link rel="stylesheet" href="../../assets/css/responsive.css?v=14">
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<div class="bg-aurora" aria-hidden="true"></div>`n<canvas id="bg-canvas"></canvas>
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="page-scrim"></div>
 <div class="read-progress" id="readProgress"></div>
 
@@ -45,10 +46,10 @@
         <button class="icon-btn" id="navClose" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
       </div>
       <a class="h-link" href="../../index.html">Inicio</a>      <a class="h-link" href="../modulos.html">Módulos</a>
-      <a class="h-link" href="../../pages/recursos.html">Recursos</a>
-      <a class="h-link" href="../../pages/glosario.html">Glosario</a>
-      <a class="h-link" href="../../pages/comandos.html">Comandos</a>
-      <a class="h-link" href="../../pages/herramientas.html">Herramientas</a>
+      <a class="h-link" href="../recursos.html">Recursos</a>
+      <a class="h-link" href="../glosario.html">Glosario</a>
+      <a class="h-link" href="../comandos.html">Comandos</a>
+      <a class="h-link" href="../herramientas.html">Herramientas</a>
     </nav>
 
     <div class="topbar-actions">
@@ -162,6 +163,84 @@
         <p class="text-dim mb-0">Crea tres círculos. Aplica al primero un relleno uniforme en CMYK puro (100% Cian), al segundo un degradado lineal de Cian a Magenta, y al tercero una transparencia uniforme al 40% sobre un fondo de color para observar la mezcla óptica.</p>
       </div>
 
+      <div class="section-head reveal mt-5">
+        <span class="kicker">4.4</span>
+        <h2>Teoría del color aplicada</h2>
+        <p>No se trata solo de elegir colores "bonitos": entender cómo se relacionan entre sí te da control sobre el mensaje, la legibilidad y la coherencia de la marca.</p>
+      </div>
+
+      <div class="fig reveal">
+        <svg viewBox="0 0 720 250" role="img" aria-label="Rueda de color básica y tinte/sombra" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <rect x="0" y="0" width="720" height="250" style="fill:var(--ink-soft)"/>
+            <text x="20" y="30" class="t-hl">Rueda de color · 6 básicos</text>
+            <line x1="140" y1="42" x2="140" y2="178" class="ln-dim"/>
+            <line x1="198.9" y1="76" x2="81.1" y2="144" class="ln-dim"/>
+            <line x1="198.9" y1="144" x2="81.1" y2="76" class="ln-dim"/>
+            <circle cx="140" cy="42" r="24" style="fill:var(--yellow)"/>
+            <circle cx="198.9" cy="76" r="24" style="fill:#3ddc84"/>
+            <circle cx="198.9" cy="144" r="24" style="fill:var(--cyan)"/>
+            <circle cx="140" cy="178" r="24" style="fill:#5b8cff"/>
+            <circle cx="81.1" cy="144" r="24" style="fill:var(--magenta)"/>
+            <circle cx="81.1" cy="76" r="24" style="fill:#ff5f56"/>
+            <text x="140" y="14" text-anchor="middle" class="t-sm">Y</text>
+            <text x="224" y="80" text-anchor="middle" class="t-sm">G</text>
+            <text x="224" y="152" text-anchor="middle" class="t-sm">C</text>
+            <text x="140" y="222" text-anchor="middle" class="t-sm">B</text>
+            <text x="56" y="152" text-anchor="middle" class="t-sm">M</text>
+            <text x="56" y="80" text-anchor="middle" class="t-sm">R</text>
+            <text x="140" y="110" text-anchor="middle" class="t-sm">RGB/CMY</text>
+            <text x="140" y="238" text-anchor="middle" class="t-sm">opuestos = complementarios</text>
+            <text x="360" y="40" class="t-hl">Tinte · Base · Sombra</text>
+            <rect x="360" y="56" width="112" height="64" rx="8" style="fill:#fff1bd;stroke:var(--line)"/>
+            <rect x="484" y="56" width="112" height="64" rx="8" style="fill:var(--yellow);stroke:var(--line)"/>
+            <rect x="608" y="56" width="112" height="64" rx="8" style="fill:#7a5b00;stroke:var(--line)"/>
+            <text x="416" y="146" text-anchor="middle" class="t-sm">tinte (+ blanco)</text>
+            <text x="540" y="146" text-anchor="middle" class="t-sm">color base</text>
+            <text x="664" y="146" text-anchor="middle" class="t-sm">sombra (+ negro)</text>
+            <text x="360" y="188" class="t-hl">Armonías básicas</text>
+            <rect x="360" y="200" width="112" height="34" rx="8" class="pill"/>
+            <circle cx="380" cy="217" r="9" style="fill:#ff5f56"/>
+            <circle cx="398" cy="217" r="9" style="fill:var(--cyan)"/>
+            <text x="476" y="221" class="t-sm">complementarios</text>
+            <rect x="490" y="200" width="110" height="34" rx="8" class="pill"/>
+            <circle cx="508" cy="217" r="9" style="fill:var(--yellow)"/>
+            <circle cx="524" cy="217" r="9" style="fill:#ff9d3c"/>
+            <circle cx="540" cy="217" r="9" style="fill:#ff5f56"/>
+            <text x="606" y="221" class="t-sm">análogos</text>
+            <rect x="616" y="200" width="90" height="34" rx="8" class="pill"/>
+            <circle cx="632" cy="217" r="9" style="fill:var(--cyan)"/>
+            <circle cx="648" cy="217" r="9" style="fill:var(--magenta)"/>
+            <circle cx="664" cy="217" r="9" style="fill:var(--yellow)"/>
+            <text x="676" y="221" class="t-sm">tríada</text>
+          </g>
+        </svg>
+        <div class="fig-caption"><b>Rueda de color</b> — los opuestos se complementan, los vecinos son análogos y tres equidistantes forman una tríada. En CorelDraw, la paleta de documento y el Harmony Editor generan estas armonías con un clic.</div>
+      </div>
+
+      <div class="row g-4 reveal">
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-brush"></i></div>
+            <h3>Paleta de documento</h3>
+            <p>Ventana → Paletas de colores → Paleta de documento: agrega aquí cada color que uses. Centralizarlos permite probar armonías globales con el <em>Harmony Editor</em> y exportarlos a otros archivos.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-vec">
+            <div class="card-icon"><i class="bi bi-eye"></i></div>
+            <h3>Legibilidad y contraste</h3>
+            <p>El contraste entre texto y fondo debe superar ciertos umbrales (≈ 4.5:1 para texto normal). Revisa cada combinación de tu paleta antes de dar por terminado un diseño.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout tip reveal">
+        <span class="label"><i class="bi bi-lightbulb"></i> Consejo</span>
+        Regla 60-30-10: un color dominante, uno secundario y un acento. Reserva los complementarios para
+        destacar acciones o datos clave, no para rellenar el lienzo.
+      </div>
+
     </div>
   </section>
 
@@ -206,7 +285,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="../../assets/js/three-bg.js"></script>
-<script src="../../assets/js/site.js?v=8"></script>
-<script src="../../assets/js/motion.js?v=8"></script>
+<script src="../../assets/js/site.js?v=14"></script>
+<script src="../../assets/js/motion.js?v=14"></script>
 </body>
 </html>
