@@ -85,7 +85,7 @@ python -m http.server 8000
 
 ## 📌 Estado del proyecto
 
-**Versión:** 2.1 · **Estatus:** Activo · Actualizaciones según el avance del material.
+**Versión:** 2.2 · **Estatus:** Activo · Actualizaciones según el avance del material.
 
 ---
 

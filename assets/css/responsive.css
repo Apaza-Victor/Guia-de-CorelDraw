@@ -126,6 +126,23 @@ section{ padding:2rem 0; }
   .h-link{ padding:.55rem .85rem; }
 }
 
+/* --- Tarjetas de módulo: apiladas en móvil --- */
+.route-summary{ grid-template-columns:repeat(2,1fr); }
+.mb-grid{ grid-template-columns:1fr; }
+@media (max-width:575px){
+  .module-card{ padding:1rem 1.05rem; }
+  .mc-foot{ flex-direction:column; align-items:flex-start; }
+  .mc-objective{ font-size:.82rem; }
+  .prog-hint{ width:100%; }
+  .prog-actions{ flex-direction:column; align-items:flex-start; gap:.4rem; }
+}
+
+/* --- Grid de módulos a 2 columnas en escritorio --- */
+@media (min-width:992px){
+  .mb-grid{ grid-template-columns:1fr 1fr; }
+  .route-summary{ grid-template-columns:repeat(4,1fr); }
+}
+
 /* Pantallas muy pequeñas (360-374px): compactar tipografía del hero */
 @media (max-width:374px){
   .hero h1{ font-size:1.8rem; }

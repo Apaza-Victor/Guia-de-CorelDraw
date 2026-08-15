@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { t:'Herramientas', d:'Catálogo de herramientas de la caja de herramientas.', k:'herramientas caja seleccion bezier pluma', u:'pages/herramientas.html' },
     { t:'Preguntas frecuentes', d:'Dudas típicas de quien empieza: precio, vector vs. píxel, PDF/X y más.', k:'preguntas frecuentes faq dudas precio vector pdf', u:'pages/preguntas-frecuentes.html' },
     { t:'Checklist de prepress', d:'20 comprobaciones para entregar archivos listos para imprenta.', k:'checklist prepress imprenta sangrado cmyk pdf/x preflight', u:'pages/checklist-preflight.html' },
-    { t:'Módulos', d:'Los 19 módulos de la ruta con su nivel y duración.', k:'modulos ruta lecciones niveles duracion', u:'pages/modulos.html' },
+    { t:'Módulos', d:'Los 19 módulos de la ruta con descripción, conceptos, prerrequisitos y progreso interactivo.', k:'modulos ruta lecciones bloques duracion descripcion conceptos prerrequisitos', u:'pages/modulos.html' },
     { t:'Cómo usar esta guía', d:'Tres pasos simples para aprovechar las 19 lecciones.', k:'como usar primeros pasos metodo portafolio', u:'pages/como-usar.html' },
     { t:'¿Qué es CorelDraw?', d:'Editor vectorial: definición, usos profesionales y suite.', k:'que es coreldraw vectorial definicion usos suite', u:'pages/que-es.html' },
     { t:'Método de la guía', d:'Aprender viendo, practicando y repitiendo.', k:'metodo metodologia niveles basico intermedio avanzado', u:'pages/metodo.html' },
@@ -228,5 +228,51 @@ document.addEventListener('DOMContentLoaded', () => {
         anime({ targets: card.querySelector('.card-icon'), rotate: [0, -8, 0], scale: [1, 1.08, 1], duration: 480, easing: 'easeOutQuad' });
       });
     });
+  }
+
+  /* ---------- Progreso de módulos (página Módulos) ---------- */
+  const moduleCards = document.querySelectorAll('.module-card[data-mod]');
+  if (moduleCards.length) {
+    const PROG_KEY = 'cd-modprog';
+    let done = new Set();
+    try { done = new Set(JSON.parse(localStorage.getItem(PROG_KEY) || '[]')); } catch (e) {}
+    const bar = document.getElementById('progBar');
+    const label = document.getElementById('progLabel');
+    const pct = document.getElementById('progPct');
+
+    function renderProgress() {
+      const total = moduleCards.length;
+      const n = done.size;
+      const p = total ? Math.round((n / total) * 100) : 0;
+      moduleCards.forEach(card => {
+        const on = done.has(card.dataset.mod);
+        card.classList.toggle('is-done', on);
+        const input = card.querySelector('.mc-check input');
+        if (input) input.checked = on;
+      });
+      if (bar) bar.style.width = p + '%';
+      if (label) label.textContent = n + ' / ' + total + ' módulos completados';
+      if (pct) pct.textContent = p + '%';
+      try { localStorage.setItem(PROG_KEY, JSON.stringify([...done])); } catch (e) {}
+    }
+
+    moduleCards.forEach(card => {
+      const input = card.querySelector('.mc-check input');
+      if (input) input.addEventListener('change', () => {
+        if (input.checked) done.add(card.dataset.mod);
+        else done.delete(card.dataset.mod);
+        renderProgress();
+      });
+    });
+
+    const resetBtn = document.getElementById('progReset');
+    if (resetBtn) resetBtn.addEventListener('click', () => {
+      if (window.confirm('¿Reiniciar el progreso de los 19 módulos?')) {
+        done.clear();
+        renderProgress();
+      }
+    });
+
+    renderProgress();
   }
 });
